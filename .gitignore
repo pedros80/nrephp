@@ -2,3 +2,4 @@
 Tests/Feature/*
 vendor/
 .phpdoc/
+.DS_Store
