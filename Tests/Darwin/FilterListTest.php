@@ -1,6 +1,6 @@
 <?php
 
-namespace Pedros80\NREphp\Tests\Darwin;
+namespace Tests\Darwin;
 
 use Pedros80\NREphp\Darwin\Exceptions\InvalidFilterList;
 use Pedros80\NREphp\Darwin\Exceptions\InvalidStationCode;

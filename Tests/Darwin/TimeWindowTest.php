@@ -1,6 +1,6 @@
 <?php
 
-namespace Pedros80\NREphp\Tests\Darwin;
+namespace Tests\Darwin;
 
 use Pedros80\NREphp\Darwin\Exceptions\InvalidTimeWindow;
 use Pedros80\NREphp\Darwin\TimeWindow;
