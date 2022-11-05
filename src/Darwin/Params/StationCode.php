@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Pedros80\NREphp\Darwin;
+namespace Pedros80\NREphp\Darwin\Params;
 
 use Pedros80\NREphp\Darwin\Exceptions\InvalidStationCode;
 

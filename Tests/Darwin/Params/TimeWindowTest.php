@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tests\Darwin;
+namespace Tests\Darwin\Params;
 
 use Pedros80\NREphp\Darwin\Exceptions\InvalidTimeWindow;
-use Pedros80\NREphp\Darwin\TimeWindow;
+use Pedros80\NREphp\Darwin\Params\TimeWindow;
 use PHPUnit\Framework\TestCase;
 
 final class TimeWindowTest extends TestCase

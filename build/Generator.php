@@ -12,7 +12,7 @@ use Pedros80\NREphp\Darwin\Exceptions\InvalidStationCode;
 
 final class Generator
 {
-    private const NAMESPACE = 'Pedros80\NREphp\Darwin';
+    private const NAMESPACE = 'Pedros80\NREphp\Darwin\Params';
     private const CLASSNAME = 'StationCode';
     private const METHODS   = [
         [
@@ -31,7 +31,7 @@ final class Generator
             'name'   => 'random',
             'static' => true,
             'body'   => 'return new StationCode(array_rand(self::STATIONS));',
-            'return' => 'Pedros80\NREphp\Darwin\StationCode',
+            'return' => 'Pedros80\NREphp\Darwin\Params\StationCode',
         ],
     ];
 

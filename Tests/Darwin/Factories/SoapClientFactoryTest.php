@@ -5,7 +5,6 @@ namespace Tests\Darwin\Factories;
 use Pedros80\NREphp\Darwin\Exceptions\LDBException;
 use Pedros80\NREphp\Darwin\Factories\SoapClientFactory;
 use Pedros80\NREphp\Darwin\LDB;
-use Pedros80\NREphp\Darwin\ServiceID;
 use PHPUnit\Framework\TestCase;
 use SoapClient;
 
@@ -34,6 +33,6 @@ final class SoapClientFactoryTest extends TestCase
 
         $ldb = new LDB($client);
 
-        $ldb->getServiceDetails(new ServiceID('blah blah blah'));
+        $ldb->getServiceDetails('blah blah blah');
     }
 }

@@ -5,10 +5,9 @@ declare(strict_types=1);
 namespace Pedros80\NREphp\Darwin;
 
 use Pedros80\NREphp\Darwin\Exceptions\LDBException;
-use Pedros80\NREphp\Darwin\FilterList;
-use Pedros80\NREphp\Darwin\NumRows;
 use Pedros80\NREphp\Darwin\Params;
-use Pedros80\NREphp\Darwin\ServiceID;
+use Pedros80\NREphp\Darwin\Params\FilterList;
+use Pedros80\NREphp\Darwin\Params\NumRows;
 use SoapClient;
 use SoapFault;
 use stdClass;
@@ -122,9 +121,9 @@ final class LDB
         return $this->departuresBoard('GetNextDeparturesWithDetails', $crs, $filterList, FilterList::SHORT, $timeOffset, $timeWindow);
     }
 
-    public function getServiceDetails(ServiceID $serviceID): stdClass
+    public function getServiceDetails(string $serviceID): stdClass
     {
-        $params = Params::fromArray(['serviceID' => (string) $serviceID]);
+        $params = Params::fromArray(['serviceID' => $serviceID]);
 
         return $this->call('GetServiceDetails', $params);
     }

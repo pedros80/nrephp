@@ -6,7 +6,6 @@ namespace Tests\Darwin;
 
 use Pedros80\NREphp\Darwin\Exceptions\LDBException;
 use Pedros80\NREphp\Darwin\LDB;
-use Pedros80\NREphp\Darwin\ServiceID;
 use PHPUnit\Framework\TestCase;
 use SoapFault;
 use Tests\MockSoapClient;
@@ -103,12 +102,12 @@ final class LDBTest extends TestCase
 
     public function testGetServiceDetailsReturnsObject(): void
     {
-        $this->assertIsObject($this->ldb->getServiceDetails(new ServiceID('mzCXFZ9LoeqyY0veTB6FfA==')));
+        $this->assertIsObject($this->ldb->getServiceDetails('mzCXFZ9LoeqyY0veTB6FfA=='));
     }
 
     public function testLDBCanThrowException(): void
     {
         $this->expectException(LDBException::class);
-        $this->assertIsObject($this->ldb->getServiceDetails(new ServiceID('INVALID')));
+        $this->assertIsObject($this->ldb->getServiceDetails('INVALID'));
     }
 }

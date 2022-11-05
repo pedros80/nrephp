@@ -16,6 +16,6 @@ final class FileClassWriter implements ClassWriter
 
     public function write(string $content): void
     {
-        $this->fileSystem->write('Darwin\StationCode.php', $content);
+        $this->fileSystem->write('Darwin\Params\StationCode.php', $content);
     }
 }

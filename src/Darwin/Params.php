@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Pedros80\NREphp\Darwin;
 
-use Pedros80\NREphp\Darwin\FilterList;
-use Pedros80\NREphp\Darwin\FilterType;
-use Pedros80\NREphp\Darwin\NumRows;
-use Pedros80\NREphp\Darwin\ServiceID;
-use Pedros80\NREphp\Darwin\StationCode;
-use Pedros80\NREphp\Darwin\TimeOffset;
-use Pedros80\NREphp\Darwin\TimeWindow;
+use Pedros80\NREphp\Darwin\Params\FilterList;
+use Pedros80\NREphp\Darwin\Params\FilterType;
+use Pedros80\NREphp\Darwin\Params\NumRows;
+use Pedros80\NREphp\Darwin\Params\ServiceID;
+use Pedros80\NREphp\Darwin\Params\StationCode;
+use Pedros80\NREphp\Darwin\Params\TimeOffset;
+use Pedros80\NREphp\Darwin\Params\TimeWindow;
 
 final class Params
 {

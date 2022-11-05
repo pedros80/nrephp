@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Pedros80\NREphp\Darwin;
+namespace Pedros80\NREphp\Darwin\Params;
 
-use Pedros80\NREphp\Darwin\Exceptions\InvalidTimeWindow;
+use Pedros80\NREphp\Darwin\Exceptions\InvalidTimeOffset;
 
-final class TimeWindow
+final class TimeOffset
 {
     public const MIN = -120;
     public const MAX = 120;
@@ -15,17 +15,12 @@ final class TimeWindow
         private int $offset
     ) {
         if ($offset < self::MIN || $offset > self::MAX) {
-            throw InvalidTimeWindow::fromNumber($offset);
+            throw InvalidTimeOffset::fromNumber($offset);
         }
     }
 
     public function value(): int
     {
         return $this->offset;
-    }
-
-    public function __toString(): string
-    {
-        return (string) $this->offset;
     }
 }

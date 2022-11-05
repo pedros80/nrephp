@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Pedros80\NREphp\Darwin;
+namespace Pedros80\NREphp\Darwin\Params;
 
 use Pedros80\NREphp\Darwin\Exceptions\InvalidFilterList;
-use Pedros80\NREphp\Darwin\StationCode;
+use Pedros80\NREphp\Darwin\Params\StationCode;
 
 final class FilterList
 {

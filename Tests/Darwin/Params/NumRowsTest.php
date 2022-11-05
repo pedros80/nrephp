@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tests\Darwin;
+namespace Tests\Darwin\Params;
 
 use Pedros80\NREphp\Darwin\Exceptions\InvalidNumRows;
-use Pedros80\NREphp\Darwin\NumRows;
+use Pedros80\NREphp\Darwin\Params\NumRows;
 use PHPUnit\Framework\TestCase;
 
 final class NumRowsTest extends TestCase

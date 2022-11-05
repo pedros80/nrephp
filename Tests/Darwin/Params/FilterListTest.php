@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tests\Darwin;
+namespace Tests\Darwin\Params;
 
 use Pedros80\NREphp\Darwin\Exceptions\InvalidFilterList;
 use Pedros80\NREphp\Darwin\Exceptions\InvalidStationCode;
-use Pedros80\NREphp\Darwin\FilterList;
+use Pedros80\NREphp\Darwin\Params\FilterList;
 use PHPUnit\Framework\TestCase;
 
 final class FilterListTest extends TestCase

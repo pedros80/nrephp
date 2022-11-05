@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tests\Darwin;
+namespace Tests\Darwin\Params;
 
 use Pedros80\NREphp\Darwin\Exceptions\InvalidTimeOffset;
-use Pedros80\NREphp\Darwin\TimeOffset;
+use Pedros80\NREphp\Darwin\Params\TimeOffset;
 use PHPUnit\Framework\TestCase;
 
 final class TimeOffsetTest extends TestCase

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tests\Darwin;
+namespace Tests\Darwin\Params;
 
 use Pedros80\NREphp\Darwin\Exceptions\InvalidFilterType;
-use Pedros80\NREphp\Darwin\FilterType;
+use Pedros80\NREphp\Darwin\Params\FilterType;
 use PHPUnit\Framework\TestCase;
 
 final class FilterTypeTest extends TestCase
