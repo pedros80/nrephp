@@ -25,7 +25,29 @@ final class ParamsTest extends TestCase
         $this->assertEquals(['serviceID' => 'XgYARy78i+wCxNwYRBBEUg=='], $params->toArray());
     }
 
-    public function testBoardStyleParamsCanBeInstantiated(): void
+    public function testStationBoardStyleParamsCanBeInstantiated(): void
+    {
+        $params = Params::fromArray([
+            'numRows'    => 10,
+            'numRowsMax' => 10,
+            'crs'        => 'DAM',
+            'filterCrs'  => 'KDY',
+            'filterType' => 'from',
+            'timeOffset' => 12,
+            'timeWindow' => -12,
+        ]);
+
+        $this->assertEquals([
+            'crs'        => 'DAM',
+            'filterCrs'  => 'KDY',
+            'filterType' => 'from',
+            'timeOffset' => 12,
+            'timeWindow' => -12,
+            'numRows'    => 10,
+        ], $params->toArray());
+    }
+
+    public function testDeparturesBoardStyleParamsCanBeInstantiated(): void
     {
         $params = Params::fromArray([
             'crs'              => 'DAM',
