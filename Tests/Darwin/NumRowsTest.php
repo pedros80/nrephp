@@ -16,6 +16,7 @@ final class NumRowsTest extends TestCase
 
         $this->assertInstanceOf(NumRows::class, $numRows);
         $this->assertEquals(3, $numRows->value());
+        $this->assertEquals(10, $numRows->max());
     }
 
     public function testLessThanZeroThrowsException(): void
