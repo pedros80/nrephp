@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Pedros80\Build;
 
 use Nette\PhpGenerator\ClassType;
@@ -45,6 +47,7 @@ final class Generator
     public function generate(): string
     {
         $file = new PhpFile();
+        $file->setStrictTypes();
         $this->addFileComment($file);
 
         $namespace = new PhpNamespace(self::NAMESPACE);

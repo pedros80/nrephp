@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\Darwin;
 
 use Pedros80\NREphp\Darwin\Params;

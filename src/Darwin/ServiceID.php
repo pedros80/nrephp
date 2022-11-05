@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Pedros80\NREphp\Darwin;
 
 final class ServiceID
