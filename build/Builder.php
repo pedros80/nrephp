@@ -4,44 +4,34 @@ declare(strict_types=1);
 
 namespace Pedros80\Build;
 
-use League\Flysystem\Filesystem;
-use League\Flysystem\Local\LocalFilesystemAdapter;
+use Pedros80\Build\GeneratorFactory;
+use Pedros80\Build\Writers\ClassWriter;
+use Pedros80\Build\Writers\WriterFactory;
 
 require __DIR__ . '/../vendor/autoload.php';
 
 final class Builder
 {
     public function __construct(
-        private Generator $generator,
+        private GeneratorFactory $generatorFactory,
         private ClassWriter $classWriter
     ) {
     }
 
     public function build(): void
     {
-        $this->classWriter->write($this->generator->generate());
+        /** @var Generator $generator */
+        foreach ($this->generatorFactory->make() as $generator) {
+            $this->classWriter->write($generator->getFilename(), $generator->generate());
+        }
     }
 }
 
-if (isset($argv[1]) && $argv[1] === 'dry-run') {
-    $writer = new ConsoleClassWriter();
-} else {
-    $writer =
-        new FileClassWriter(
-            new Filesystem(
-                new LocalFilesystemAdapter('src')
-            )
-        );
-}
+$writerFactory = new WriterFactory();
 
 $builder = new Builder(
-    new Generator(
-        new Parser(
-            new Filesystem(new LocalFilesystemAdapter('data'))
-        ),
-        new Printer()
-    ),
-    $writer
+    new GeneratorFactory(),
+    $writerFactory->make(isset($argv[1]) && $argv[1] === 'dry-run')
 );
 
 $builder->build();
