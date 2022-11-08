@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace Pedros80\NREphp\Darwin\Params\HSP;
 
+use Pedros80\NREphp\Darwin\Exceptions\HSP\InvalidParams;
 use Pedros80\NREphp\Darwin\Params\StationCode;
 use Pedros80\NREphp\Darwin\Params\TOC;
 
 final class Params
 {
-    public function __construct(
+    private function __construct(
         private ?StationCode $from_loc = null,
         private ?StationCode $to_loc = null,
         private ?HistoricalDateTime $from_date_time = null,
@@ -64,6 +65,10 @@ final class Params
 
     public static function fromArray(array $data): Params
     {
+        if (!count($data) || (!isset($data['from_loc']) && !isset($data['rid']))) {
+            throw InvalidParams::fromArray($data);
+        }
+
         $from_loc       = isset($data['from_loc']) ? new StationCode($data['from_loc']) : null;
         $to_loc         = isset($data['to_loc']) ? new StationCode($data['to_loc']) : null;
         $from_date_time = isset($data['from_date_time']) ? HistoricalDateTime::fromString($data['from_date_time']) : null;

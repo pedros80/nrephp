@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Pedros80\NREphp\Darwin\Params\LDB;
 
+use Pedros80\NREphp\Darwin\Exceptions\LDB\InvalidParams;
 use Pedros80\NREphp\Darwin\Params\LDB\FilterList;
 use Pedros80\NREphp\Darwin\Params\LDB\FilterType;
 use Pedros80\NREphp\Darwin\Params\LDB\NumRows;
@@ -14,7 +15,7 @@ use Pedros80\NREphp\Darwin\Params\StationCode;
 
 final class Params
 {
-    public function __construct(
+    private function __construct(
         private ?NumRows $numRows = null,
         private ?StationCode $crs = null,
         private ?StationCode $filterCrs = null,
@@ -67,6 +68,10 @@ final class Params
 
     public static function fromArray(array $data): Params
     {
+        if (!count($data) || (!isset($data['crs']) && !isset($data['serviceID']))) {
+            throw InvalidParams::fromArray($data);
+        }
+
         $numRows    = isset($data['numRows']) ? new NumRows($data['numRows'], $data['numRowsMax']) : null;
         $crs        = isset($data['crs']) ? new StationCode($data['crs']) : null;
         $filterCrs  = isset($data['filterCrs']) ? new StationCode($data['filterCrs']) : null;

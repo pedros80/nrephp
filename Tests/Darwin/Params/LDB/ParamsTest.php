@@ -4,16 +4,29 @@ declare(strict_types=1);
 
 namespace Tests\Darwin\Params\LDB;
 
+use Pedros80\NREphp\Darwin\Exceptions\LDB\InvalidParams;
 use Pedros80\NREphp\Darwin\Params\LDB\Params;
 use PHPUnit\Framework\TestCase;
 
 final class ParamsTest extends TestCase
 {
-    public function testEmptyParamsCanBeInstantiated(): void
+    public function testEmptyParamsCantBeInstantiated(): void
     {
-        $params = Params::fromArray([]);
-        $this->assertInstanceOf(Params::class, $params);
-        $this->assertEquals([], $params->toArray());
+        $this->expectException(InvalidParams::class);
+        $this->expectExceptionMessage('Invalid params: can not be empty.');
+
+        Params::fromArray([]);
+    }
+
+    public function testInvalidParamsCantBeInstantiated(): void
+    {
+        $this->expectException(InvalidParams::class);
+        $this->expectExceptionMessage('Invalid params: must contain either board or service params.');
+
+        Params::fromArray([
+            'numRows'    => 10,
+            'numRowsMax' => 10
+        ]);
     }
 
     public function testServiceIDParamsCanBeInstantiated(): void
