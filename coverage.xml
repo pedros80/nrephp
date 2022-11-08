@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1667871494">
-  <project timestamp="1667871494">
+<coverage generated="1667871955">
+  <project timestamp="1667871955">
     <file name="/home/runner/work/nrephp/nrephp/src/Darwin/Exceptions/HSP/InvalidDays.php">
       <class name="Pedros80\NREphp\Darwin\Exceptions\HSP\InvalidDays" namespace="global">
         <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
