@@ -45,6 +45,8 @@ final class ParamsTest extends TestCase
             'from_date_time' => '2020-01-01 07:00:00',
             'to_date_time'   => '2020-01-02 08:00:00',
             'days'           => 'WEEKDAY',
+            'tolerance'      => [1, 2, 3],
+            'toc'            => 'ZZ',
         ]);
 
         $this->assertEquals([
@@ -55,6 +57,8 @@ final class ParamsTest extends TestCase
             'to_time'   => '0800',
             'to_date'   => '2020-01-02',
             'days'      => 'WEEKDAY',
+            'tolerance' => [1, 2, 3],
+            'toc'       => 'ZZ',
         ], $params->toArray());
     }
 
