@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Pedros80\Build\Writers;
 
 use League\Flysystem\Filesystem;

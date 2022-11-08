@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\Darwin\Params;
 
 use Pedros80\NREphp\Darwin\Exceptions\InvalidTOC;

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\Darwin\Params\HSP;
 
 use Pedros80\NREphp\Darwin\Exceptions\HSP\InvalidDays;
