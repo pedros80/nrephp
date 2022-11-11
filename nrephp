@@ -1,0 +1,19 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+use Pedros80\Build\Commands\BuildClasses;
+use Pedros80\Build\Commands\GetToken;
+use Pedros80\Build\Commands\UpdateXmlFiles;
+use Pedros80\Build\Commands\UpdateZipFiles;
+use Symfony\Component\Console\Application;
+
+$application = new Application();
+
+$application->add(new BuildClasses());
+$application->add(new GetToken());
+$application->add(new UpdateXmlFiles());
+$application->add(new UpdateZipFiles());
+
+$application->run();

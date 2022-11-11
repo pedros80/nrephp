@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Pedros80\Build\Writers;
 
-use Pedros80\Build\Writers\ClassWriter;
+use Pedros80\Build\Writers\Writer;
 
-final class ConsoleClassWriter implements ClassWriter
+final class ConsoleWriter implements Writer
 {
     public function write(string $path, string $content): void
     {

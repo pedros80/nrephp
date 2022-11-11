@@ -36,8 +36,6 @@ final class HSP
         try {
             return $this->call('serviceMetrics', $params);
         } catch (ConnectException $t) {
-            var_dump($t->getMessage());
-
             return (object) ['success' => false];
         }
     }

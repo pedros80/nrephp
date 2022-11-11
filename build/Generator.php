@@ -7,9 +7,19 @@ namespace Pedros80\Build;
 use Nette\PhpGenerator\ClassType;
 use Nette\PhpGenerator\PhpFile;
 use Nette\PhpGenerator\PhpNamespace;
+use Pedros80\Build\Printer;
 
 abstract class Generator
 {
+    protected array $data;
+
+    public function __construct(
+        protected Parser $parser,
+        protected Printer $printer
+    ) {
+        $this->data = $this->parser->parse();
+    }
+
     abstract public function getFileName(): string;
     abstract protected function getClassName(): string;
     abstract protected function addConstants(ClassType $class): void;

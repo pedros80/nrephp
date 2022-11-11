@@ -6,21 +6,10 @@ namespace Pedros80\Build\StationCodes;
 
 use Nette\PhpGenerator\ClassType;
 use Pedros80\Build\Generator as BuildGenerator;
-use Pedros80\Build\Printer;
-use Pedros80\Build\StationCodes\Parser;
 use Pedros80\NREphp\Darwin\Exceptions\InvalidStationCode;
 
 final class Generator extends BuildGenerator
 {
-    private array $stations;
-
-    public function __construct(
-        protected Parser $parser,
-        protected Printer $printer
-    ) {
-        $this->stations = $this->parser->parse();
-    }
-
     protected function getClassName(): string
     {
         return 'StationCode';
@@ -62,7 +51,7 @@ final class Generator extends BuildGenerator
 
     protected function addConstants(ClassType $class): void
     {
-        $class->addConstant('STATIONS', $this->stations)->setPrivate();
+        $class->addConstant('STATIONS', $this->data)->setPrivate();
     }
 
     protected function addConstructor(ClassType $class): void

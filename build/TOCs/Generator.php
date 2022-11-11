@@ -6,21 +6,10 @@ namespace Pedros80\Build\TOCs;
 
 use Nette\PhpGenerator\ClassType;
 use Pedros80\Build\Generator as BuildGenerator;
-use Pedros80\Build\Printer;
-use Pedros80\Build\TOCs\Parser;
 use Pedros80\NREphp\Darwin\Exceptions\InvalidTOC;
 
 final class Generator extends BuildGenerator
 {
-    private array $codes;
-
-    public function __construct(
-        protected Parser $parser,
-        protected Printer $printer
-    ) {
-        $this->codes = $this->parser->parse();
-    }
-
     public function getFileName(): string
     {
         return 'Darwin\Params\TOC.php';
@@ -33,7 +22,7 @@ final class Generator extends BuildGenerator
 
     protected function addConstants(ClassType $class): void
     {
-        $class->addConstant('CODES', $this->codes)->setPrivate();
+        $class->addConstant('CODES', $this->data)->setPrivate();
     }
 
     protected function addConstructor(ClassType $class): void

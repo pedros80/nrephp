@@ -14,9 +14,9 @@ final class InvalidParams extends Exception
     public static function fromArray(array $params): InvalidParams
     {
         if (!count($params)) {
-            return new InvalidParams("Invalid params: can not be empty.");
+            return new InvalidParams('Invalid params: can not be empty.');
         } else {
-            return new InvalidParams("Invalid params: must contain either board or service params.");
+            return new InvalidParams('Invalid params: must contain either board or service params.');
         }
     }
 }
