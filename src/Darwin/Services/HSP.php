@@ -35,7 +35,7 @@ final class HSP
 
         try {
             return $this->call('serviceMetrics', $params);
-        } catch (ConnectException $t) {
+        } catch (ConnectException) {
             return (object) ['success' => false];
         }
     }
@@ -48,7 +48,7 @@ final class HSP
 
         try {
             return $this->call('serviceDetails', $params);
-        } catch (ConnectException $t) {
+        } catch (ConnectException) {
             return (object) ['success' => false];
         }
     }

@@ -23,9 +23,4 @@ final class TimeWindow
     {
         return $this->offset;
     }
-
-    public function __toString(): string
-    {
-        return (string) $this->offset;
-    }
 }
