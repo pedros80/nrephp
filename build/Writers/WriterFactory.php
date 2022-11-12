@@ -6,27 +6,22 @@ namespace Pedros80\Build\Writers;
 
 use League\Flysystem\Filesystem;
 use League\Flysystem\Local\LocalFilesystemAdapter;
-use Pedros80\Build\Writers\ConsoleClassWriter;
-use Pedros80\Build\Writers\FileClassWriter;
+use Pedros80\Build\Writers\ConsoleWriter;
+use Pedros80\Build\Writers\FileWriter;
 
 final class WriterFactory
 {
-    public function make(bool $console): ClassWriter
+    public function makeFileWriter(string $root): FileWriter
     {
-        return $console ? $this->makeConsoleWriter() : $this->makeFileWriter();
-    }
-
-    private function makeConsoleWriter(): ConsoleClassWriter
-    {
-        return new ConsoleClassWriter();
-    }
-
-    private function makeFileWriter(): FileClassWriter
-    {
-        return new FileClassWriter(
+        return new FileWriter(
             new Filesystem(
-                new LocalFilesystemAdapter('src')
+                new LocalFilesystemAdapter($root)
             )
         );
+    }
+
+    public function makeConsoleWriter(): ConsoleWriter
+    {
+        return new ConsoleWriter();
     }
 }

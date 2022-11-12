@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace Pedros80\Build\StationCodes;
 
 use League\Flysystem\Filesystem;
+use Pedros80\Build\Parser as BuildParser;
 
-final class Parser
+final class Parser implements BuildParser
 {
     public function __construct(
         private Filesystem $filesystem

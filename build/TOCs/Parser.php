@@ -7,8 +7,9 @@ namespace Pedros80\Build\TOCs;
 use DOMDocument;
 use DOMElement;
 use League\Flysystem\Filesystem;
+use Pedros80\Build\Parser as BuildParser;
 
-final class Parser
+final class Parser implements BuildParser
 {
     public function __construct(
         private Filesystem $filesystem
@@ -24,7 +25,7 @@ final class Parser
 
         $table = $doc->getElementById('tablesort');
 
-        $rows = $table->getElementsByTagName('tr');
+        $rows = $table?->getElementsByTagName('tr') ?: [];
         foreach ($rows as $row) {
             [$code, $name, $date] = $this->parseRow($row);
             if ($code) {
