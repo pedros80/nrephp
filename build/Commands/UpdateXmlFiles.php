@@ -60,9 +60,10 @@ final class UpdateXmlFiles extends Command
 
         foreach (self::FEEDS as $feed) {
             if (!$this->single || $this->single === $feed) {
-                $data = $this->kb->$feed($this->token);
-                $this->writer->write("{$feed}.xml", $data);
-                $processed[] = $feed;
+                $file = $this->writer->write("{$feed}.xml", $this->kb->$feed($this->token));
+                if ($file) {
+                    $processed[] = $feed;
+                }
             }
         }
 

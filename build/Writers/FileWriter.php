@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Pedros80\Build\Writers;
 
 use League\Flysystem\Filesystem;
+use League\Flysystem\FilesystemException;
+use League\Flysystem\UnableToWriteFile;
 
 final class FileWriter implements Writer
 {
@@ -13,8 +15,14 @@ final class FileWriter implements Writer
     ) {
     }
 
-    public function write(string $path, string $content): void
+    public function write(string $path, string $content): bool
     {
-        $this->fileSystem->write($path, $content);
+        try {
+            $this->fileSystem->write($path, $content);
+        } catch (FilesystemException | UnableToWriteFile) {
+            return false;
+        }
+
+        return true;
     }
 }

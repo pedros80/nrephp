@@ -8,8 +8,10 @@ use Pedros80\Build\Writers\Writer;
 
 final class ConsoleWriter implements Writer
 {
-    public function write(string $path, string $content): void
+    public function write(string $path, string $content): bool
     {
         echo "{$path}\n{$content}\n";
+
+        return true;
     }
 }

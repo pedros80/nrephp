@@ -56,9 +56,10 @@ final class UpdateZipFiles extends Command
 
         foreach (self::FEEDS as $feed) {
             if (!$this->single || $this->single === $feed) {
-                $data = $this->dtd->$feed($this->token);
-                $this->writer->write("{$feed}.zip", $data);
-                $processed[] = $feed;
+                $file = $this->writer->write("{$feed}.zip", $this->dtd->$feed($this->token));
+                if ($file) {
+                    $processed[] = $feed;
+                }
             }
         }
 

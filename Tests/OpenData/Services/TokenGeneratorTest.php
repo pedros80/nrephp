@@ -9,36 +9,35 @@ use Pedros80\NREphp\OpenData\Exceptions\CouldNotGenerateToken;
 use Pedros80\NREphp\OpenData\Services\TokenGenerator;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
-use Prophecy\Prophecy\ObjectProphecy;
 
 final class TokenGeneratorTest extends TestCase
 {
     use ProphecyTrait;
 
-    private ObjectProphecy $client;
-
-    public function setUp(): void
-    {
-        $this->client = $this->prophesize(Client::class);
-    }
-
     public function testTokenGeneratorCanBeInstantiated(): void
     {
-        $tg = new TokenGenerator($this->client->reveal());
+        $client = $this->prophesize(Client::class);
+
+        $tg = new TokenGenerator($client->reveal());
 
         $this->assertInstanceOf(TokenGenerator::class, $tg);
     }
 
     public function testValidResponseCanBeParsed(): void
     {
-        $this->client->post('', [
+        $client = $this->prophesize(Client::class);
+
+        /** @var string $token */
+        $token = json_encode(['token' => 'username:1668153791000:access_token']);
+
+        $client->post('', [
             'form_params' => [
                 'username' => 'username',
                 'password' => 'password'
             ]
-        ])->willReturn(new Response(200, [], json_encode(['token' => 'username:1668153791000:access_token'])));
+        ])->willReturn(new Response(200, [], $token));
 
-        $tg = new TokenGenerator($this->client->reveal());
+        $tg = new TokenGenerator($client->reveal());
 
         $token = $tg->get('username', 'password');
 
@@ -53,14 +52,16 @@ final class TokenGeneratorTest extends TestCase
         $this->expectException(CouldNotGenerateToken::class);
         $this->expectExceptionMessage('Problem with response');
 
-        $this->client->post('', [
+        $client = $this->prophesize(Client::class);
+
+        $client->post('', [
             'form_params' => [
                 'username' => 'username',
                 'password' => 'password'
             ]
         ])->willThrow(new Exception('Problem with response'));
 
-        $tg = new TokenGenerator($this->client->reveal());
+        $tg = new TokenGenerator($client->reveal());
         $tg->get('username', 'password');
     }
 }
