@@ -27,18 +27,14 @@ final class TokenGeneratorTest extends TestCase
     {
         $client = $this->prophesize(Client::class);
 
-        /** @var string $token */
-        $token = json_encode(['token' => 'username:1668153791000:access_token']);
-
         $client->post('', [
             'form_params' => [
                 'username' => 'username',
                 'password' => 'password'
             ]
-        ])->willReturn(new Response(200, [], $token));
+        ])->willReturn(new Response(200, [], '{"token":"username:1668153791000:access_token"}'));
 
-        $tg = new TokenGenerator($client->reveal());
-
+        $tg    = new TokenGenerator($client->reveal());
         $token = $tg->get('username', 'password');
 
         $this->assertIsArray($token);
