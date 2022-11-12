@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668280406">
-  <project timestamp="1668280406">
+<coverage generated="1668285049">
+  <project timestamp="1668285049">
     <file name="/home/runner/work/nrephp/nrephp/src/Darwin/Exceptions/HSP/InvalidDays.php">
       <class name="Pedros80\NREphp\Darwin\Exceptions\HSP\InvalidDays" namespace="global">
         <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
@@ -195,77 +195,77 @@
       <class name="Pedros80\NREphp\Darwin\Params\HSP\Days" namespace="global">
         <metrics complexity="3" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
       </class>
-      <line num="21" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="4"/>
-      <line num="23" type="stmt" count="4"/>
+      <line num="21" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="6"/>
+      <line num="23" type="stmt" count="6"/>
       <line num="24" type="stmt" count="1"/>
-      <line num="28" type="method" name="__toString" visibility="public" complexity="1" crap="1" count="3"/>
-      <line num="30" type="stmt" count="3"/>
+      <line num="28" type="method" name="__toString" visibility="public" complexity="1" crap="1" count="5"/>
+      <line num="30" type="stmt" count="5"/>
       <metrics loc="33" ncloc="33" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/Darwin/Params/HSP/HistoricalDateTime.php">
       <class name="Pedros80\NREphp\Darwin\Params\HSP\HistoricalDateTime" namespace="global">
         <metrics complexity="6" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="12" coveredelements="12"/>
       </class>
-      <line num="12" type="method" name="__construct" visibility="private" complexity="1" crap="1" count="4"/>
-      <line num="17" type="method" name="date" visibility="public" complexity="1" crap="1" count="4"/>
-      <line num="19" type="stmt" count="4"/>
-      <line num="22" type="method" name="time" visibility="public" complexity="1" crap="1" count="4"/>
-      <line num="24" type="stmt" count="4"/>
-      <line num="27" type="method" name="fromString" visibility="public" complexity="3" crap="3" count="6"/>
-      <line num="29" type="stmt" count="6"/>
-      <line num="31" type="stmt" count="6"/>
-      <line num="33" type="stmt" count="6"/>
+      <line num="12" type="method" name="__construct" visibility="private" complexity="1" crap="1" count="6"/>
+      <line num="17" type="method" name="date" visibility="public" complexity="1" crap="1" count="6"/>
+      <line num="19" type="stmt" count="6"/>
+      <line num="22" type="method" name="time" visibility="public" complexity="1" crap="1" count="6"/>
+      <line num="24" type="stmt" count="6"/>
+      <line num="27" type="method" name="fromString" visibility="public" complexity="3" crap="3" count="8"/>
+      <line num="29" type="stmt" count="8"/>
+      <line num="31" type="stmt" count="8"/>
+      <line num="33" type="stmt" count="8"/>
       <line num="34" type="stmt" count="2"/>
-      <line num="37" type="stmt" count="4"/>
+      <line num="37" type="stmt" count="6"/>
       <metrics loc="40" ncloc="40" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="12" coveredelements="12"/>
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/Darwin/Params/HSP/Params.php">
       <class name="Pedros80\NREphp\Darwin\Params\HSP\Params" namespace="global">
         <metrics complexity="22" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="32" coveredstatements="32" elements="35" coveredelements="35"/>
       </class>
-      <line num="13" type="method" name="__construct" visibility="private" complexity="1" crap="1" count="3"/>
-      <line num="25" type="method" name="toArray" visibility="public" complexity="9" crap="9" count="3"/>
-      <line num="27" type="stmt" count="3"/>
-      <line num="29" type="stmt" count="3"/>
-      <line num="30" type="stmt" count="1"/>
-      <line num="33" type="stmt" count="3"/>
-      <line num="34" type="stmt" count="1"/>
-      <line num="37" type="stmt" count="3"/>
-      <line num="38" type="stmt" count="1"/>
-      <line num="39" type="stmt" count="1"/>
-      <line num="42" type="stmt" count="3"/>
-      <line num="43" type="stmt" count="1"/>
-      <line num="44" type="stmt" count="1"/>
-      <line num="47" type="stmt" count="3"/>
-      <line num="48" type="stmt" count="1"/>
-      <line num="51" type="stmt" count="3"/>
+      <line num="13" type="method" name="__construct" visibility="private" complexity="1" crap="1" count="7"/>
+      <line num="25" type="method" name="toArray" visibility="public" complexity="9" crap="9" count="7"/>
+      <line num="27" type="stmt" count="7"/>
+      <line num="29" type="stmt" count="7"/>
+      <line num="30" type="stmt" count="3"/>
+      <line num="33" type="stmt" count="7"/>
+      <line num="34" type="stmt" count="3"/>
+      <line num="37" type="stmt" count="7"/>
+      <line num="38" type="stmt" count="3"/>
+      <line num="39" type="stmt" count="3"/>
+      <line num="42" type="stmt" count="7"/>
+      <line num="43" type="stmt" count="3"/>
+      <line num="44" type="stmt" count="3"/>
+      <line num="47" type="stmt" count="7"/>
+      <line num="48" type="stmt" count="3"/>
+      <line num="51" type="stmt" count="7"/>
       <line num="52" type="stmt" count="1"/>
-      <line num="55" type="stmt" count="3"/>
-      <line num="56" type="stmt" count="1"/>
-      <line num="59" type="stmt" count="3"/>
-      <line num="60" type="stmt" count="2"/>
-      <line num="63" type="stmt" count="3"/>
-      <line num="66" type="method" name="fromArray" visibility="public" complexity="12" crap="12" count="5"/>
-      <line num="68" type="stmt" count="5"/>
+      <line num="55" type="stmt" count="7"/>
+      <line num="56" type="stmt" count="3"/>
+      <line num="59" type="stmt" count="7"/>
+      <line num="60" type="stmt" count="4"/>
+      <line num="63" type="stmt" count="7"/>
+      <line num="66" type="method" name="fromArray" visibility="public" complexity="12" crap="12" count="9"/>
+      <line num="68" type="stmt" count="9"/>
       <line num="69" type="stmt" count="2"/>
-      <line num="72" type="stmt" count="3"/>
-      <line num="73" type="stmt" count="3"/>
-      <line num="74" type="stmt" count="3"/>
-      <line num="75" type="stmt" count="3"/>
-      <line num="76" type="stmt" count="3"/>
-      <line num="77" type="stmt" count="3"/>
-      <line num="78" type="stmt" count="3"/>
-      <line num="79" type="stmt" count="3"/>
-      <line num="81" type="stmt" count="3"/>
+      <line num="72" type="stmt" count="7"/>
+      <line num="73" type="stmt" count="7"/>
+      <line num="74" type="stmt" count="7"/>
+      <line num="75" type="stmt" count="7"/>
+      <line num="76" type="stmt" count="7"/>
+      <line num="77" type="stmt" count="7"/>
+      <line num="78" type="stmt" count="7"/>
+      <line num="79" type="stmt" count="7"/>
+      <line num="81" type="stmt" count="7"/>
       <metrics loc="84" ncloc="84" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="32" coveredstatements="32" elements="35" coveredelements="35"/>
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/Darwin/Params/HSP/Rid.php">
       <class name="Pedros80\NREphp\Darwin\Params\HSP\Rid" namespace="global">
         <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
       </class>
-      <line num="9" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="15" type="method" name="__toString" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="17" type="stmt" count="2"/>
+      <line num="9" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="15" type="method" name="__toString" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="17" type="stmt" count="4"/>
       <metrics loc="20" ncloc="19" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/Darwin/Params/HSP/Tolerance.php">
@@ -378,28 +378,26 @@
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/Darwin/Params/LDB/TimeWindow.php">
       <class name="Pedros80\NREphp\Darwin\Params\LDB\TimeWindow" namespace="global">
-        <metrics complexity="5" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="4" elements="8" coveredelements="6"/>
+        <metrics complexity="4" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
       </class>
       <line num="14" type="method" name="__construct" visibility="public" complexity="3" crap="3" count="5"/>
       <line num="17" type="stmt" count="5"/>
       <line num="18" type="stmt" count="2"/>
       <line num="22" type="method" name="value" visibility="public" complexity="1" crap="1" count="3"/>
       <line num="24" type="stmt" count="3"/>
-      <line num="27" type="method" name="__toString" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="29" type="stmt" count="0"/>
-      <metrics loc="32" ncloc="32" classes="1" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="4" elements="8" coveredelements="6"/>
+      <metrics loc="27" ncloc="27" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/Darwin/Params/StationCode.php">
       <class name="Pedros80\NREphp\Darwin\Params\StationCode" namespace="global">
         <metrics complexity="5" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="10" coveredelements="10"/>
       </class>
-      <line num="2599" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="19"/>
-      <line num="2601" type="stmt" count="19"/>
+      <line num="2599" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="21"/>
+      <line num="2601" type="stmt" count="21"/>
       <line num="2602" type="stmt" count="2"/>
       <line num="2606" type="method" name="name" visibility="public" complexity="1" crap="1" count="2"/>
       <line num="2608" type="stmt" count="2"/>
-      <line num="2611" type="method" name="__toString" visibility="public" complexity="1" crap="1" count="16"/>
-      <line num="2613" type="stmt" count="16"/>
+      <line num="2611" type="method" name="__toString" visibility="public" complexity="1" crap="1" count="18"/>
+      <line num="2613" type="stmt" count="18"/>
       <line num="2616" type="method" name="random" visibility="public" complexity="1" crap="1" count="1"/>
       <line num="2618" type="stmt" count="1"/>
       <metrics loc="2621" ncloc="2617" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="10" coveredelements="10"/>
@@ -408,33 +406,33 @@
       <class name="Pedros80\NREphp\Darwin\Params\TOC" namespace="global">
         <metrics complexity="3" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
       </class>
-      <line num="248" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="3"/>
-      <line num="250" type="stmt" count="3"/>
+      <line num="248" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="5"/>
+      <line num="250" type="stmt" count="5"/>
       <line num="251" type="stmt" count="1"/>
-      <line num="255" type="method" name="__toString" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="257" type="stmt" count="2"/>
+      <line num="255" type="method" name="__toString" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="257" type="stmt" count="4"/>
       <metrics loc="260" ncloc="256" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/Darwin/Services/HSP.php">
       <class name="Pedros80\NREphp\Darwin\Services\HSP" namespace="global">
-        <metrics complexity="6" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="1" elements="16" coveredelements="2"/>
+        <metrics complexity="6" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="16" coveredelements="16"/>
       </class>
-      <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="17" type="method" name="getServiceMetrics" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="26" type="stmt" count="0"/>
-      <line num="37" type="stmt" count="0"/>
-      <line num="38" type="stmt" count="0"/>
-      <line num="39" type="stmt" count="0"/>
-      <line num="43" type="method" name="getServiceDetails" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="45" type="stmt" count="0"/>
-      <line num="50" type="stmt" count="0"/>
-      <line num="51" type="stmt" count="0"/>
-      <line num="52" type="stmt" count="0"/>
-      <line num="56" type="method" name="call" visibility="private" complexity="1" crap="2" count="0"/>
-      <line num="58" type="stmt" count="0"/>
-      <line num="59" type="stmt" count="0"/>
-      <line num="62" type="stmt" count="0"/>
-      <metrics loc="65" ncloc="65" classes="1" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="1" elements="16" coveredelements="2"/>
+      <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="5"/>
+      <line num="17" type="method" name="getServiceMetrics" visibility="public" complexity="2" crap="2" count="2"/>
+      <line num="26" type="stmt" count="2"/>
+      <line num="37" type="stmt" count="2"/>
+      <line num="38" type="stmt" count="1"/>
+      <line num="39" type="stmt" count="1"/>
+      <line num="43" type="method" name="getServiceDetails" visibility="public" complexity="2" crap="2" count="2"/>
+      <line num="45" type="stmt" count="2"/>
+      <line num="50" type="stmt" count="2"/>
+      <line num="51" type="stmt" count="1"/>
+      <line num="52" type="stmt" count="1"/>
+      <line num="56" type="method" name="call" visibility="private" complexity="1" crap="1" count="4"/>
+      <line num="58" type="stmt" count="4"/>
+      <line num="59" type="stmt" count="4"/>
+      <line num="62" type="stmt" count="2"/>
+      <metrics loc="65" ncloc="65" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="16" coveredelements="16"/>
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/Darwin/Services/LDB.php">
       <class name="Pedros80\NREphp\Darwin\Services\LDB" namespace="global">
@@ -501,13 +499,13 @@
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/OpenData/Factories/HttpClientFactory.php">
       <class name="Pedros80\NREphp\OpenData\Factories\HttpClientFactory" namespace="global">
-        <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="4" coveredelements="0"/>
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
       </class>
-      <line num="16" type="method" name="makeAuthClient" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="18" type="stmt" count="0"/>
-      <line num="28" type="method" name="makeClient" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="30" type="stmt" count="0"/>
-      <metrics loc="39" ncloc="39" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="4" coveredelements="0"/>
+      <line num="16" type="method" name="makeAuthClient" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="18" type="stmt" count="1"/>
+      <line num="28" type="method" name="makeClient" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="30" type="stmt" count="1"/>
+      <metrics loc="39" ncloc="39" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/OpenData/KnowledgeBase/KB.php">
       <class name="Pedros80\NREphp\OpenData\KnowledgeBase\KB" namespace="global">
@@ -560,6 +558,6 @@
       <line num="42" type="stmt" count="1"/>
       <metrics loc="46" ncloc="46" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="15" coveredelements="15"/>
     </file>
-    <metrics files="38" loc="4206" ncloc="4196" classes="37" methods="104" coveredmethods="85" conditionals="0" coveredconditionals="0" statements="244" coveredstatements="211" elements="348" coveredelements="296"/>
+    <metrics files="38" loc="4201" ncloc="4191" classes="37" methods="103" coveredmethods="90" conditionals="0" coveredconditionals="0" statements="243" coveredstatements="224" elements="346" coveredelements="314"/>
   </project>
 </coverage>
