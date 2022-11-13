@@ -16,7 +16,7 @@ final class Broker
 
     public function __construct(string $host, int $port, string $user, string $pass)
     {
-        $connection = new Connection('tcp://' . $host . ':' . $port);
+        $connection = new Connection("tcp://{$host}:{$port}");
         $client     = new Client($connection);
         $client->setLogin($user, $pass);
         // Once we've created the Stomp connection and client, we will add a heartbeat
@@ -33,16 +33,16 @@ final class Broker
 
     public function subscribe(string $topic, ?string $selector = null): void
     {
-        $destination                       = '/topic/' . $topic;
-        $this->subscriptions[$destination] = $this->client->subscribe($destination, $selector, 'client-individual');
+        $id                       = "/topic/{$topic}";
+        $this->subscriptions[$id] = $this->client->subscribe($id, $selector, 'client-individual');
     }
 
     public function unsubscribe(?string $topic = null): void
     {
         if ($topic) {
-            $destination = '/topic/' . $topic;
-            if (isset($this->subscriptions[$destination])) {
-                $this->client->unsubscribe($this->subscriptions[$destination]);
+            $id = "/topic/{$topic}";
+            if (isset($this->subscriptions[$id])) {
+                $this->client->unsubscribe($this->subscriptions[$id]);
             }
         } else {
             $this->client->unsubscribe();
