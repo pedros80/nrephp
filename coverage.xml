@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668292413">
-  <project timestamp="1668292413">
+<coverage generated="1668338540">
+  <project timestamp="1668338540">
+    <file name="/home/runner/work/nrephp/nrephp/src/Darwin/Commands/PushPortListener.php">
+      <class name="Pedros80\NREphp\Darwin\Commands\PushPortListener" namespace="global">
+        <metrics complexity="7" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="0" elements="23" coveredelements="0"/>
+      </class>
+      <line num="26" type="method" name="configure" visibility="protected" complexity="1" crap="2" count="0"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="29" type="stmt" count="0"/>
+      <line num="32" type="method" name="execute" visibility="protected" complexity="6" crap="42" count="0"/>
+      <line num="34" type="stmt" count="0"/>
+      <line num="35" type="stmt" count="0"/>
+      <line num="38" type="stmt" count="0"/>
+      <line num="39" type="stmt" count="0"/>
+      <line num="40" type="stmt" count="0"/>
+      <line num="41" type="stmt" count="0"/>
+      <line num="43" type="stmt" count="0"/>
+      <line num="45" type="stmt" count="0"/>
+      <line num="47" type="stmt" count="0"/>
+      <line num="48" type="stmt" count="0"/>
+      <line num="51" type="stmt" count="0"/>
+      <line num="52" type="stmt" count="0"/>
+      <line num="53" type="stmt" count="0"/>
+      <line num="54" type="stmt" count="0"/>
+      <line num="55" type="stmt" count="0"/>
+      <line num="57" type="stmt" count="0"/>
+      <line num="59" type="stmt" count="0"/>
+      <line num="60" type="stmt" count="0"/>
+      <line num="62" type="stmt" count="0"/>
+      <metrics loc="66" ncloc="66" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="0" elements="23" coveredelements="0"/>
+    </file>
     <file name="/home/runner/work/nrephp/nrephp/src/Darwin/Exceptions/HSP/InvalidDays.php">
       <class name="Pedros80\NREphp\Darwin\Exceptions\HSP\InvalidDays" namespace="global">
         <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
@@ -507,6 +536,35 @@
       <line num="30" type="stmt" count="1"/>
       <metrics loc="39" ncloc="39" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
     </file>
+    <file name="/home/runner/work/nrephp/nrephp/src/OpenData/KnowledgeBase/Commands/RealTimeIncidentsListener.php">
+      <class name="Pedros80\NREphp\OpenData\KnowledgeBase\Commands\RealTimeIncidentsListener" namespace="global">
+        <metrics complexity="7" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="0" elements="23" coveredelements="0"/>
+      </class>
+      <line num="25" type="method" name="configure" visibility="protected" complexity="1" crap="2" count="0"/>
+      <line num="27" type="stmt" count="0"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="31" type="method" name="execute" visibility="protected" complexity="6" crap="42" count="0"/>
+      <line num="33" type="stmt" count="0"/>
+      <line num="34" type="stmt" count="0"/>
+      <line num="37" type="stmt" count="0"/>
+      <line num="38" type="stmt" count="0"/>
+      <line num="39" type="stmt" count="0"/>
+      <line num="40" type="stmt" count="0"/>
+      <line num="42" type="stmt" count="0"/>
+      <line num="44" type="stmt" count="0"/>
+      <line num="46" type="stmt" count="0"/>
+      <line num="47" type="stmt" count="0"/>
+      <line num="50" type="stmt" count="0"/>
+      <line num="51" type="stmt" count="0"/>
+      <line num="52" type="stmt" count="0"/>
+      <line num="53" type="stmt" count="0"/>
+      <line num="54" type="stmt" count="0"/>
+      <line num="56" type="stmt" count="0"/>
+      <line num="58" type="stmt" count="0"/>
+      <line num="59" type="stmt" count="0"/>
+      <line num="61" type="stmt" count="0"/>
+      <metrics loc="65" ncloc="65" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="0" elements="23" coveredelements="0"/>
+    </file>
     <file name="/home/runner/work/nrephp/nrephp/src/OpenData/KnowledgeBase/KB.php">
       <class name="Pedros80\NREphp\OpenData\KnowledgeBase\KB" namespace="global">
         <metrics complexity="7" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="14" coveredelements="14"/>
@@ -558,6 +616,37 @@
       <line num="42" type="stmt" count="1"/>
       <metrics loc="46" ncloc="46" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="15" coveredelements="15"/>
     </file>
-    <metrics files="38" loc="4201" ncloc="4191" classes="37" methods="103" coveredmethods="102" conditionals="0" coveredconditionals="0" statements="243" coveredstatements="238" elements="346" coveredelements="340"/>
+    <file name="/home/runner/work/nrephp/nrephp/src/Shared/Services/Broker.php">
+      <class name="Pedros80\NREphp\Shared\Services\Broker" namespace="global">
+        <metrics complexity="9" methods="6" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="0" elements="25" coveredelements="0"/>
+      </class>
+      <line num="17" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="19" type="stmt" count="0"/>
+      <line num="20" type="stmt" count="0"/>
+      <line num="21" type="stmt" count="0"/>
+      <line num="24" type="stmt" count="0"/>
+      <line num="25" type="stmt" count="0"/>
+      <line num="27" type="stmt" count="0"/>
+      <line num="28" type="stmt" count="0"/>
+      <line num="30" type="stmt" count="0"/>
+      <line num="31" type="stmt" count="0"/>
+      <line num="34" type="method" name="subscribe" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="36" type="stmt" count="0"/>
+      <line num="37" type="stmt" count="0"/>
+      <line num="40" type="method" name="unsubscribe" visibility="public" complexity="3" crap="12" count="0"/>
+      <line num="42" type="stmt" count="0"/>
+      <line num="43" type="stmt" count="0"/>
+      <line num="44" type="stmt" count="0"/>
+      <line num="45" type="stmt" count="0"/>
+      <line num="48" type="stmt" count="0"/>
+      <line num="52" type="method" name="read" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="54" type="stmt" count="0"/>
+      <line num="57" type="method" name="ack" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="59" type="stmt" count="0"/>
+      <line num="62" type="method" name="nack" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="64" type="stmt" count="0"/>
+      <metrics loc="67" ncloc="63" classes="1" methods="6" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="0" elements="25" coveredelements="0"/>
+    </file>
+    <metrics files="41" loc="4399" ncloc="4385" classes="40" methods="113" coveredmethods="102" conditionals="0" coveredconditionals="0" statements="304" coveredstatements="238" elements="417" coveredelements="340"/>
   </project>
 </coverage>
