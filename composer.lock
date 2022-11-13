@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e205bbe630f21a624162539d83d607ca",
+    "content-hash": "b3da7b7a113c20e9f0a8a309b9e0cbc9",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -593,6 +593,82 @@
                 "source": "https://github.com/ralouphie/getallheaders/tree/develop"
             },
             "time": "2019-03-08T08:55:37+00:00"
+        },
+        {
+            "name": "stomp-php/stomp-php",
+            "version": "dev-php8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pedros80/stomp-php.git",
+                "reference": "8a477e9b2dd5305ecba71ceac6f82fab405b5d5f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pedros80/stomp-php/zipball/8a477e9b2dd5305ecba71ceac6f82fab405b5d5f",
+                "reference": "8a477e9b2dd5305ecba71ceac6f82fab405b5d5f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3|^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Stomp\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Stomp\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Dejan Bosnanac",
+                    "email": "dejan@nighttale.net",
+                    "homepage": "http://www.nighttale.net"
+                },
+                {
+                    "name": "Sören Rohweder",
+                    "email": "s.rohweder@blage.net",
+                    "homepage": "http://www.monofone.de"
+                },
+                {
+                    "name": "Jens Radtke",
+                    "email": "swefl@fin-sn.de",
+                    "homepage": "http://www.fin-sn.de"
+                }
+            ],
+            "description": "stomp support for PHP",
+            "homepage": "http://github.com/stomp-php/stomp-php",
+            "keywords": [
+                "activemq",
+                "apollomq",
+                "jms",
+                "messaging",
+                "rabbitmq",
+                "stomp"
+            ],
+            "support": {
+                "source": "https://github.com/pedros80/stomp-php/tree/php8.1"
+            },
+            "funding": [
+                {
+                    "type": "github",
+                    "url": "https://github.com/jmglsn"
+                },
+                {
+                    "type": "github",
+                    "url": "https://github.com/staabm"
+                }
+            ],
+            "time": "2022-11-13T11:05:31+00:00"
         },
         {
             "name": "symfony/console",
@@ -5004,7 +5080,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "stomp-php/stomp-php": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
