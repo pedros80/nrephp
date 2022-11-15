@@ -1,9 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Pedros80\Build\Commands;
 
-use Pedros80\NREphp\OpenData\Factories\HttpClientFactory;
-use Pedros80\NREphp\OpenData\Services\TokenGenerator;
+use Pedros80\NREphp\OpenData\Factories\ServicesFactory;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -19,10 +20,8 @@ final class GetToken extends Command
     {
         [$user, $pass] = $this->parseArguments($input);
 
-        $clientFactory = new HttpClientFactory();
-        $client        = $clientFactory->makeAuthClient();
-
-        $tokenGenerator = new TokenGenerator($client);
+        $serviceFactory = new ServicesFactory();
+        $tokenGenerator = $serviceFactory->makeTokenGenerator();
 
         $this->displayToken($output, $tokenGenerator->get($user, $pass));
 

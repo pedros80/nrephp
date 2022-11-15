@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Pedros80\Build\Commands;
 
 use Pedros80\Build\Builder;
@@ -42,6 +44,8 @@ final class BuildClasses extends Command
     {
         if (count($files) === 0) {
             $output->writeln('No classes built.');
+
+            return;
         }
 
         $s     = count($files) === 1 ? '' : 's';

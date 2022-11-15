@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Pedros80\Build\Commands;
 
 use Pedros80\Build\Writers\Writer;
 use Pedros80\Build\Writers\WriterFactory;
 use Pedros80\NREphp\OpenData\DTD\DTD;
-use Pedros80\NREphp\OpenData\Factories\HttpClientFactory;
+use Pedros80\NREphp\OpenData\Factories\ServicesFactory;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -39,10 +41,12 @@ final class UpdateZipFiles extends Command
 
     public function execute(InputInterface $input, OutputInterface $output): int
     {
+        $serviceFactory = new ServicesFactory();
+
         $this->token  = $input->getArgument('token');
         $this->single = $input->getArgument('feed');
         $this->dry    = $input->getOption('dry-run');
-        $this->dtd    = $this->getService();
+        $this->dtd    = $serviceFactory->makeDTD();
         $this->writer = $this->getWriter();
 
         $this->results($this->doFeeds(), $output);
@@ -77,14 +81,6 @@ final class UpdateZipFiles extends Command
         $s         = count($processed) === 1 ? '' : 's';
         $processed = implode(', ', $processed);
         $output->writeln("Processed the feed{$s} {$processed}");
-    }
-
-    private function getService(): DTD
-    {
-        $clientFactory = new HttpClientFactory();
-        $client        = $clientFactory->makeClient();
-
-        return new DTD($client);
     }
 
     private function getWriter(): Writer

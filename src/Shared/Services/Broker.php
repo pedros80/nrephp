@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Pedros80\NREphp\Shared\Services;
 
 use Stomp\Client;
@@ -8,13 +10,11 @@ use Stomp\Network\Observer\HeartbeatEmitter;
 use Stomp\StatefulStomp;
 use Stomp\Transport\Frame;
 
-final class Broker
+abstract class Broker
 {
     private StatefulStomp $client;
 
-    private array $subscriptions = [];
-
-    public function __construct(string $host, int $port, string $user, string $pass)
+    public function __construct(string $host, int $port, string $user, string $pass, array $topics)
     {
         $connection = new Connection("tcp://{$host}:{$port}");
         $client     = new Client($connection);
@@ -29,23 +29,9 @@ final class Broker
         // Lastly, we create our internal Stomp client which will be used in our methods to interact with ActiveMQ.
         $this->client = new StatefulStomp($client);
         $client->connect();
-    }
 
-    public function subscribe(string $topic, ?string $selector = null): void
-    {
-        $id                       = "/topic/{$topic}";
-        $this->subscriptions[$id] = $this->client->subscribe($id, $selector, 'client-individual');
-    }
-
-    public function unsubscribe(?string $topic = null): void
-    {
-        if ($topic) {
-            $id = "/topic/{$topic}";
-            if (isset($this->subscriptions[$id])) {
-                $this->client->unsubscribe($this->subscriptions[$id]);
-            }
-        } else {
-            $this->client->unsubscribe();
+        foreach ($topics as $topic) {
+            $this->client->subscribe("/topic/{$topic}", null, 'client-individual');
         }
     }
 

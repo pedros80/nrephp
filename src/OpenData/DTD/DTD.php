@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Pedros80\NREphp\OpenData\DTD;
 
 use Pedros80\NREphp\OpenData\Services\Service;

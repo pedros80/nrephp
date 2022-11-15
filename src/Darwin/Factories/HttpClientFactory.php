@@ -10,7 +10,7 @@ use GuzzleHttp\RequestOptions;
 final class HttpClientFactory
 {
     private const BASE_URI   = 'https://hsp-prod.rockshore.net/api/v1/';
-    private const USER_AGENT = 'NREphp - test';
+    private const USER_AGENT = 'NREphp';
 
     public function make(string $user, string $pass): Client
     {
