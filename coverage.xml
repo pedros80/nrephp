@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668552171">
-  <project timestamp="1668552171">
+<coverage generated="1668556155">
+  <project timestamp="1668556155">
     <file name="/home/runner/work/nrephp/nrephp/src/Darwin/Commands/PushPortListen.php">
       <class name="Pedros80\NREphp\Darwin\Commands\PushPortListen" namespace="global">
         <metrics complexity="6" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="0" elements="21" coveredelements="0"/>
@@ -181,13 +181,13 @@
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/Darwin/Exceptions/PushPort/CantReadMessagesFile.php">
       <class name="Pedros80\NREphp\Darwin\Exceptions\PushPort\CantReadMessagesFile" namespace="global">
-        <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="4" coveredelements="0"/>
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
       </class>
-      <line num="11" type="method" name="__construct" visibility="private" complexity="1" crap="2" count="0"/>
-      <line num="13" type="stmt" count="0"/>
-      <line num="16" type="method" name="fromPath" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="18" type="stmt" count="0"/>
-      <metrics loc="21" ncloc="21" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="4" coveredelements="0"/>
+      <line num="11" type="method" name="__construct" visibility="private" complexity="1" crap="1" count="1"/>
+      <line num="13" type="stmt" count="1"/>
+      <line num="16" type="method" name="fromPath" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="18" type="stmt" count="1"/>
+      <metrics loc="21" ncloc="21" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/Darwin/Exceptions/PushPort/CantReadSnapShotFile.php">
       <class name="Pedros80\NREphp\Darwin\Exceptions\PushPort\CantReadSnapShotFile" namespace="global">
@@ -201,13 +201,13 @@
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/Darwin/Exceptions/PushPort/CantReadTimetableFile.php">
       <class name="Pedros80\NREphp\Darwin\Exceptions\PushPort\CantReadTimetableFile" namespace="global">
-        <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="4" coveredelements="0"/>
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
       </class>
-      <line num="11" type="method" name="__construct" visibility="private" complexity="1" crap="2" count="0"/>
-      <line num="13" type="stmt" count="0"/>
-      <line num="16" type="method" name="fromPath" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="18" type="stmt" count="0"/>
-      <metrics loc="21" ncloc="21" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="4" coveredelements="0"/>
+      <line num="11" type="method" name="__construct" visibility="private" complexity="1" crap="1" count="1"/>
+      <line num="13" type="stmt" count="1"/>
+      <line num="16" type="method" name="fromPath" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="18" type="stmt" count="1"/>
+      <metrics loc="21" ncloc="21" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/Darwin/Exceptions/PushPort/NoMessagesFiles.php">
       <class name="Pedros80\NREphp\Darwin\Exceptions\PushPort\NoMessagesFiles" namespace="global">
@@ -229,20 +229,20 @@
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/Darwin/Factories/FileClientFactory.php">
       <class name="Pedros80\NREphp\Darwin\Factories\FileClientFactory" namespace="global">
-        <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="0" elements="11" coveredelements="0"/>
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="11" coveredelements="11"/>
       </class>
-      <line num="21" type="method" name="makeFtp" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="23" type="stmt" count="0"/>
-      <line num="24" type="stmt" count="0"/>
-      <line num="25" type="stmt" count="0"/>
-      <line num="34" type="stmt" count="0"/>
-      <line num="37" type="method" name="makeS3" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="39" type="stmt" count="0"/>
-      <line num="41" type="stmt" count="0"/>
-      <line num="47" type="stmt" count="0"/>
-      <line num="48" type="stmt" count="0"/>
-      <line num="55" type="stmt" count="0"/>
-      <metrics loc="58" ncloc="58" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="0" elements="11" coveredelements="0"/>
+      <line num="21" type="method" name="makeFtp" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="23" type="stmt" count="1"/>
+      <line num="24" type="stmt" count="1"/>
+      <line num="25" type="stmt" count="1"/>
+      <line num="34" type="stmt" count="1"/>
+      <line num="37" type="method" name="makeS3" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="39" type="stmt" count="1"/>
+      <line num="41" type="stmt" count="1"/>
+      <line num="47" type="stmt" count="1"/>
+      <line num="48" type="stmt" count="1"/>
+      <line num="55" type="stmt" count="1"/>
+      <metrics loc="58" ncloc="58" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="11" coveredelements="11"/>
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/Darwin/Factories/HttpClientFactory.php">
       <class name="Pedros80\NREphp\Darwin\Factories\HttpClientFactory" namespace="global">
@@ -256,7 +256,7 @@
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/Darwin/Factories/ServicesFactory.php">
       <class name="Pedros80\NREphp\Darwin\Factories\ServicesFactory" namespace="global">
-        <metrics complexity="4" methods="4" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="6" elements="16" coveredelements="8"/>
+        <metrics complexity="4" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="16" coveredelements="16"/>
       </class>
       <line num="17" type="method" name="makeLDB" visibility="public" complexity="1" crap="1" count="1"/>
       <line num="19" type="stmt" count="1"/>
@@ -266,15 +266,15 @@
       <line num="27" type="stmt" count="1"/>
       <line num="28" type="stmt" count="1"/>
       <line num="30" type="stmt" count="1"/>
-      <line num="33" type="method" name="makePushPortFiles" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="35" type="stmt" count="0"/>
-      <line num="36" type="stmt" count="0"/>
-      <line num="38" type="stmt" count="0"/>
-      <line num="41" type="method" name="makeTimetableFiles" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="43" type="stmt" count="0"/>
-      <line num="44" type="stmt" count="0"/>
-      <line num="46" type="stmt" count="0"/>
-      <metrics loc="49" ncloc="49" classes="1" methods="4" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="6" elements="16" coveredelements="8"/>
+      <line num="33" type="method" name="makePushPortFiles" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="35" type="stmt" count="1"/>
+      <line num="36" type="stmt" count="1"/>
+      <line num="38" type="stmt" count="1"/>
+      <line num="41" type="method" name="makeTimetableFiles" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="43" type="stmt" count="1"/>
+      <line num="44" type="stmt" count="1"/>
+      <line num="46" type="stmt" count="1"/>
+      <metrics loc="49" ncloc="49" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="16" coveredelements="16"/>
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/Darwin/Factories/SoapClientFactory.php">
       <class name="Pedros80\NREphp\Darwin\Factories\SoapClientFactory" namespace="global">
@@ -589,55 +589,55 @@
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/Darwin/Services/PushPortFiles.php">
       <class name="Pedros80\NREphp\Darwin\Services\PushPortFiles" namespace="global">
-        <metrics complexity="8" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="0" elements="27" coveredelements="0"/>
+        <metrics complexity="8" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="21" elements="27" coveredelements="24"/>
       </class>
-      <line num="17" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="22" type="method" name="getSnapshot" visibility="public" complexity="3" crap="12" count="0"/>
-      <line num="24" type="stmt" count="0"/>
-      <line num="25" type="stmt" count="0"/>
-      <line num="26" type="stmt" count="0"/>
-      <line num="27" type="stmt" count="0"/>
-      <line num="29" type="stmt" count="0"/>
-      <line num="30" type="stmt" count="0"/>
-      <line num="34" type="stmt" count="0"/>
-      <line num="36" type="stmt" count="0"/>
-      <line num="37" type="stmt" count="0"/>
+      <line num="18" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="8"/>
+      <line num="23" type="method" name="getSnapshot" visibility="public" complexity="3" crap="3.07" count="2"/>
+      <line num="25" type="stmt" count="2"/>
+      <line num="26" type="stmt" count="2"/>
+      <line num="27" type="stmt" count="2"/>
+      <line num="28" type="stmt" count="2"/>
+      <line num="30" type="stmt" count="2"/>
+      <line num="31" type="stmt" count="1"/>
+      <line num="35" type="stmt" count="1"/>
+      <line num="37" type="stmt" count="1"/>
       <line num="38" type="stmt" count="0"/>
-      <line num="42" type="method" name="getMessagesListing" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="44" type="stmt" count="0"/>
-      <line num="45" type="stmt" count="0"/>
-      <line num="46" type="stmt" count="0"/>
-      <line num="47" type="stmt" count="0"/>
-      <line num="48" type="stmt" count="0"/>
-      <line num="50" type="stmt" count="0"/>
-      <line num="51" type="stmt" count="0"/>
-      <line num="54" type="stmt" count="0"/>
-      <line num="57" type="method" name="getMessage" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="60" type="stmt" count="0"/>
-      <line num="62" type="stmt" count="0"/>
-      <line num="63" type="stmt" count="0"/>
-      <line num="64" type="stmt" count="0"/>
-      <metrics loc="68" ncloc="68" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="0" elements="27" coveredelements="0"/>
+      <line num="39" type="stmt" count="0"/>
+      <line num="43" type="method" name="listMessages" visibility="public" complexity="2" crap="2" count="2"/>
+      <line num="45" type="stmt" count="2"/>
+      <line num="46" type="stmt" count="2"/>
+      <line num="47" type="stmt" count="2"/>
+      <line num="48" type="stmt" count="2"/>
+      <line num="49" type="stmt" count="2"/>
+      <line num="51" type="stmt" count="2"/>
+      <line num="52" type="stmt" count="1"/>
+      <line num="55" type="stmt" count="1"/>
+      <line num="58" type="method" name="getMessage" visibility="public" complexity="2" crap="2" count="2"/>
+      <line num="61" type="stmt" count="2"/>
+      <line num="63" type="stmt" count="1"/>
+      <line num="64" type="stmt" count="1"/>
+      <line num="65" type="stmt" count="1"/>
+      <metrics loc="69" ncloc="69" classes="1" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="21" elements="27" coveredelements="24"/>
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/Darwin/Services/TimetableFiles.php">
       <class name="Pedros80\NREphp\Darwin\Services\TimetableFiles" namespace="global">
-        <metrics complexity="5" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="15" coveredelements="0"/>
+        <metrics complexity="5" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="15" coveredelements="15"/>
       </class>
-      <line num="16" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="21" type="method" name="listFiles" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="23" type="stmt" count="0"/>
-      <line num="24" type="stmt" count="0"/>
-      <line num="25" type="stmt" count="0"/>
-      <line num="26" type="stmt" count="0"/>
-      <line num="28" type="stmt" count="0"/>
-      <line num="29" type="stmt" count="0"/>
-      <line num="32" type="stmt" count="0"/>
-      <line num="35" type="method" name="getFile" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="38" type="stmt" count="0"/>
-      <line num="40" type="stmt" count="0"/>
-      <line num="41" type="stmt" count="0"/>
-      <line num="42" type="stmt" count="0"/>
-      <metrics loc="46" ncloc="46" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="15" coveredelements="0"/>
+      <line num="16" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="6"/>
+      <line num="21" type="method" name="listFiles" visibility="public" complexity="2" crap="2" count="2"/>
+      <line num="23" type="stmt" count="2"/>
+      <line num="24" type="stmt" count="2"/>
+      <line num="25" type="stmt" count="2"/>
+      <line num="26" type="stmt" count="2"/>
+      <line num="28" type="stmt" count="2"/>
+      <line num="29" type="stmt" count="1"/>
+      <line num="32" type="stmt" count="1"/>
+      <line num="35" type="method" name="getFile" visibility="public" complexity="2" crap="2" count="2"/>
+      <line num="38" type="stmt" count="2"/>
+      <line num="40" type="stmt" count="1"/>
+      <line num="41" type="stmt" count="1"/>
+      <line num="42" type="stmt" count="1"/>
+      <metrics loc="46" ncloc="46" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="15" coveredelements="15"/>
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/OpenData/DTD/DTD.php">
       <class name="Pedros80\NREphp\OpenData\DTD\DTD" namespace="global">
@@ -661,29 +661,29 @@
       <class name="Pedros80\NREphp\OpenData\Factories\HttpClientFactory" namespace="global">
         <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
       </class>
-      <line num="16" type="method" name="makeAuthClient" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="18" type="stmt" count="1"/>
-      <line num="28" type="method" name="makeClient" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="30" type="stmt" count="1"/>
+      <line num="16" type="method" name="makeAuthClient" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="18" type="stmt" count="2"/>
+      <line num="28" type="method" name="makeClient" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="30" type="stmt" count="3"/>
       <metrics loc="39" ncloc="39" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/OpenData/Factories/ServicesFactory.php">
       <class name="Pedros80\NREphp\OpenData\Factories\ServicesFactory" namespace="global">
-        <metrics complexity="3" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="0" elements="12" coveredelements="0"/>
+        <metrics complexity="3" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="12" coveredelements="12"/>
       </class>
-      <line num="14" type="method" name="makeDTD" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="16" type="stmt" count="0"/>
-      <line num="17" type="stmt" count="0"/>
-      <line num="19" type="stmt" count="0"/>
-      <line num="22" type="method" name="makeKB" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="24" type="stmt" count="0"/>
-      <line num="25" type="stmt" count="0"/>
-      <line num="27" type="stmt" count="0"/>
-      <line num="30" type="method" name="makeTokenGenerator" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="32" type="stmt" count="0"/>
-      <line num="33" type="stmt" count="0"/>
-      <line num="35" type="stmt" count="0"/>
-      <metrics loc="38" ncloc="38" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="0" elements="12" coveredelements="0"/>
+      <line num="14" type="method" name="makeDTD" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="16" type="stmt" count="1"/>
+      <line num="17" type="stmt" count="1"/>
+      <line num="19" type="stmt" count="1"/>
+      <line num="22" type="method" name="makeKB" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="24" type="stmt" count="1"/>
+      <line num="25" type="stmt" count="1"/>
+      <line num="27" type="stmt" count="1"/>
+      <line num="30" type="method" name="makeTokenGenerator" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="32" type="stmt" count="1"/>
+      <line num="33" type="stmt" count="1"/>
+      <line num="35" type="stmt" count="1"/>
+      <metrics loc="38" ncloc="38" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="12" coveredelements="12"/>
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/OpenData/KnowledgeBase/Commands/RealTimeIncidentsListen.php">
       <class name="Pedros80\NREphp\OpenData\KnowledgeBase\Commands\RealTimeIncidentsListen" namespace="global">
@@ -744,7 +744,7 @@
       <class name="Pedros80\NREphp\OpenData\Services\Service" namespace="global">
         <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
       </class>
-      <line num="11" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="12"/>
+      <line num="11" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="14"/>
       <line num="16" type="method" name="call" visibility="protected" complexity="1" crap="1" count="10"/>
       <line num="18" type="stmt" count="10"/>
       <line num="20" type="stmt" count="10"/>
@@ -755,7 +755,7 @@
       <class name="Pedros80\NREphp\OpenData\Services\TokenGenerator" namespace="global">
         <metrics complexity="4" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="15" coveredelements="15"/>
       </class>
-      <line num="13" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="13" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="4"/>
       <line num="18" type="method" name="get" visibility="public" complexity="2" crap="2" count="2"/>
       <line num="21" type="stmt" count="2"/>
       <line num="23" type="stmt" count="2"/>
@@ -795,6 +795,6 @@
       <line num="50" type="stmt" count="0"/>
       <metrics loc="53" ncloc="49" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="0" elements="18" coveredelements="0"/>
     </file>
-    <metrics files="53" loc="4758" ncloc="4741" classes="49" methods="133" coveredmethods="102" conditionals="0" coveredconditionals="0" statements="362" coveredstatements="238" elements="495" coveredelements="340"/>
+    <metrics files="53" loc="4759" ncloc="4742" classes="49" methods="133" coveredmethods="119" conditionals="0" coveredconditionals="0" statements="362" coveredstatements="299" elements="495" coveredelements="418"/>
   </project>
 </coverage>
