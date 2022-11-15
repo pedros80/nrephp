@@ -3,25 +3,17 @@
 namespace Pedros80\NREphp\Darwin\Commands;
 
 use Exception;
-use Pedros80\NREphp\Shared\Services\Broker;
+use Pedros80\NREphp\Darwin\Services\PushPortBroker;
 use Stomp\Transport\Frame;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class PushPortListener extends Command
+class PushPortListen extends Command
 {
-    protected static $defaultName       = 'darwin:pushPortListener';
-    protected static $defaultDescrption = 'Listen to Darwin PushPort topic';
-
-    private const HOST = 'darwin-dist-44ae45.nationalrail.co.uk';
-    private const PORT = 61613;
-
-    private const TOPICS = [
-        'darwin.pushport-v16',
-        'darwin.status',
-    ];
+    protected static $defaultName        = 'darwin:pushPortListen';
+    protected static $defaultDescription = 'Listen to Darwin PushPort topic';
 
     protected function configure(): void
     {
@@ -35,7 +27,7 @@ class PushPortListener extends Command
         $pass = $input->getArgument('password');
 
         try {
-            $broker = new Broker(self::HOST, self::PORT, $user, $pass);
+            $broker = PushPortBroker::fromCredentials($user, $pass);
         } catch (Exception $e) {
             $output->writeln('<error>Failed to connect to broker</error>');
             $output->writeln("<comment>{$e->getMessage()}</comment>");
@@ -43,10 +35,6 @@ class PushPortListener extends Command
             return Command::FAILURE;
         }
         $output->writeln('<comment>Connected to broker, listening for messages...</comment>');
-
-        foreach (self::TOPICS as $topic) {
-            $broker->subscribe($topic);
-        }
 
         while (true) {
             $message = $broker->read();
@@ -56,7 +44,7 @@ class PushPortListener extends Command
 
                     return Command::SUCCESS;
                 }
-                $output->writeln('<info>Processed message: ' . '$message->getBody()' . '</info>');
+                $output->writeln('<info>Processed message: ' . gzdecode($message->getBody()) . '</info>');
                 $broker->ack($message);
             }
             usleep(100000);
