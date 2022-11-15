@@ -41,7 +41,7 @@ final class ServicesFactory
     public function makeTimetableFiles(string $key, string $secret): TimetableFiles
     {
         $clientFactory = new FileClientFactory();
-        $client = $clientFactory->makeS3($key, $secret);
+        $client        = $clientFactory->makeS3($key, $secret);
 
         return new TimetableFiles($client);
     }

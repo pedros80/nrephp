@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Pedros80\NREphp\Shared\Services;
 
 use Stomp\Client;
