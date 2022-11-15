@@ -44,6 +44,8 @@ final class BuildClasses extends Command
     {
         if (count($files) === 0) {
             $output->writeln('No classes built.');
+
+            return;
         }
 
         $s     = count($files) === 1 ? '' : 's';

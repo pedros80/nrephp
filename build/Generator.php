@@ -7,6 +7,7 @@ namespace Pedros80\Build;
 use Nette\PhpGenerator\ClassType;
 use Nette\PhpGenerator\PhpFile;
 use Nette\PhpGenerator\PhpNamespace;
+use Pedros80\Build\Parser;
 use Pedros80\Build\Printer;
 
 abstract class Generator

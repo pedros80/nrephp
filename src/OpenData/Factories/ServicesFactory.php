@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Pedros80\NREphp\Darwin\Factories;
+namespace Pedros80\NREphp\OpenData\Factories;
 
 use Pedros80\NREphp\OpenData\DTD\DTD;
 use Pedros80\NREphp\OpenData\Factories\HttpClientFactory;

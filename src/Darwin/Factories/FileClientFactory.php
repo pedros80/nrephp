@@ -15,6 +15,9 @@ final class FileClientFactory
 {
     private const HOST = 'darwin-dist-44ae45.nationalrail.co.uk';
 
+    private const S3_BUCKET = 'darwin.xmltimetable';
+    private const S3_PREFIX = 'PPTimetable/';
+
     public function makeFtp(string $user, string $pass): Filesystem
     {
         $filesystem = new Filesystem(
@@ -44,8 +47,8 @@ final class FileClientFactory
         $filesystem = new Filesystem(
             new AwsS3V3Adapter(
                 $s3,
-                'darwin.xmltimetable',
-                'PPTimetable/'
+                self::S3_BUCKET,
+                self::S3_PREFIX
             )
         );
 
