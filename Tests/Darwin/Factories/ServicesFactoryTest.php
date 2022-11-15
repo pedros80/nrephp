@@ -7,6 +7,8 @@ namespace Tests\Darwin\Factories;
 use Pedros80\NREphp\Darwin\Factories\ServicesFactory;
 use Pedros80\NREphp\Darwin\Services\HSP;
 use Pedros80\NREphp\Darwin\Services\LDB;
+use Pedros80\NREphp\Darwin\Services\PushPortFiles;
+use Pedros80\NREphp\Darwin\Services\TimetableFiles;
 use PHPUnit\Framework\TestCase;
 
 final class ServicesFactoryTest extends TestCase
@@ -32,5 +34,21 @@ final class ServicesFactoryTest extends TestCase
         $hsp     = $factory->makeHSP('user', 'pass');
 
         $this->assertInstanceOf(HSP::class, $hsp);
+    }
+
+    public function testServicesFactoryCanMakePushPortFiles(): void
+    {
+        $factory = new ServicesFactory();
+        $ppf     = $factory->makePushPortFiles('user', 'pass');
+
+        $this->assertInstanceOf(PushPortFiles::class, $ppf);
+    }
+
+    public function testServicesFactoryCanMakeTimetableFiles(): void
+    {
+        $factory = new ServicesFactory();
+        $ttf     = $factory->makeTimetableFiles('key', 'secret');
+
+        $this->assertInstanceOf(TimetableFiles::class, $ttf);
     }
 }

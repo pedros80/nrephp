@@ -9,7 +9,7 @@ use Pedros80\NREphp\Darwin\Factories\HttpClientFactory;
 use Pedros80\NREphp\Darwin\Factories\SoapClientFactory;
 use Pedros80\NREphp\Darwin\Services\HSP;
 use Pedros80\NREphp\Darwin\Services\LDB;
-use Pedros80\NREphp\Darwin\Services\PushPortFtp;
+use Pedros80\NREphp\Darwin\Services\PushPortFiles;
 use Pedros80\NREphp\Darwin\Services\TimetableFiles;
 
 final class ServicesFactory
@@ -30,12 +30,12 @@ final class ServicesFactory
         return new HSP($client);
     }
 
-    public function makePushPortFtp(string $user, string $pass): PushPortFtp
+    public function makePushPortFiles(string $user, string $pass): PushPortFiles
     {
         $clientFactory = new FileClientFactory();
         $client        = $clientFactory->makeFtp($user, $pass);
 
-        return new PushPortFtp($client);
+        return new PushPortFiles($client);
     }
 
     public function makeTimetableFiles(string $key, string $secret): TimetableFiles
