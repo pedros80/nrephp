@@ -30,7 +30,7 @@ abstract class Generator
 
     private function getNamespace(): string
     {
-        return 'Pedros80\NREphp\Darwin\Params';
+        return 'Pedros80\NREphp\Params';
     }
 
     public function generate(): string

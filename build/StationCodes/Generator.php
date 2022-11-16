@@ -6,7 +6,7 @@ namespace Pedros80\Build\StationCodes;
 
 use Nette\PhpGenerator\ClassType;
 use Pedros80\Build\Generator as BuildGenerator;
-use Pedros80\NREphp\Darwin\Exceptions\InvalidStationCode;
+use Pedros80\NREphp\Exceptions\InvalidStationCode;
 
 final class Generator extends BuildGenerator
 {
@@ -17,7 +17,7 @@ final class Generator extends BuildGenerator
 
     public function getFileName(): string
     {
-        return "Darwin\Params\StationCode.php";
+        return 'Params\StationCode.php';
     }
 
     protected function getMethods(): array
@@ -39,7 +39,7 @@ final class Generator extends BuildGenerator
                 'name'   => 'random',
                 'static' => true,
                 'body'   => 'return new StationCode(array_rand(self::STATIONS));',
-                'return' => 'Pedros80\NREphp\Darwin\Params\StationCode',
+                'return' => 'Pedros80\NREphp\Params\StationCode',
             ],
         ];
     }

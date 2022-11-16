@@ -7,8 +7,8 @@ use Pedros80\Build\Commands\BuildClasses;
 use Pedros80\Build\Commands\GetToken;
 use Pedros80\Build\Commands\UpdateXmlFiles;
 use Pedros80\Build\Commands\UpdateZipFiles;
-use Pedros80\NREphp\Darwin\Commands\PushPortListen;
-use Pedros80\NREphp\OpenData\KnowledgeBase\Commands\RealTimeIncidentsListen;
+use Pedros80\NREphp\Commands\PushPortListen;
+use Pedros80\NREphp\Commands\RealTimeIncidentsListen;
 use Symfony\Component\Console\Application;
 
 $application = new Application();

@@ -6,13 +6,13 @@ namespace Pedros80\Build\TOCs;
 
 use Nette\PhpGenerator\ClassType;
 use Pedros80\Build\Generator as BuildGenerator;
-use Pedros80\NREphp\Darwin\Exceptions\InvalidTOC;
+use Pedros80\NREphp\Exceptions\InvalidTOC;
 
 final class Generator extends BuildGenerator
 {
     public function getFileName(): string
     {
-        return 'Darwin\Params\TOC.php';
+        return 'Params\TOC.php';
     }
 
     protected function getClassName(): string
