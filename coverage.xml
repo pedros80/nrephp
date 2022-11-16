@@ -1,60 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668640429">
-  <project timestamp="1668640429">
-    <file name="/home/runner/work/nrephp/nrephp/src/Commands/PushPortListen.php">
-      <class name="Pedros80\NREphp\Commands\PushPortListen" namespace="global">
-        <metrics complexity="6" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="0" elements="21" coveredelements="0"/>
-      </class>
-      <line num="20" type="method" name="configure" visibility="protected" complexity="1" crap="2" count="0"/>
-      <line num="22" type="stmt" count="0"/>
-      <line num="23" type="stmt" count="0"/>
-      <line num="26" type="method" name="execute" visibility="protected" complexity="5" crap="30" count="0"/>
-      <line num="28" type="stmt" count="0"/>
-      <line num="29" type="stmt" count="0"/>
-      <line num="32" type="stmt" count="0"/>
-      <line num="33" type="stmt" count="0"/>
-      <line num="34" type="stmt" count="0"/>
-      <line num="35" type="stmt" count="0"/>
-      <line num="37" type="stmt" count="0"/>
-      <line num="39" type="stmt" count="0"/>
-      <line num="41" type="stmt" count="0"/>
-      <line num="42" type="stmt" count="0"/>
-      <line num="43" type="stmt" count="0"/>
-      <line num="44" type="stmt" count="0"/>
-      <line num="45" type="stmt" count="0"/>
-      <line num="47" type="stmt" count="0"/>
-      <line num="49" type="stmt" count="0"/>
-      <line num="50" type="stmt" count="0"/>
-      <line num="52" type="stmt" count="0"/>
-      <metrics loc="56" ncloc="56" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="0" elements="21" coveredelements="0"/>
-    </file>
-    <file name="/home/runner/work/nrephp/nrephp/src/Commands/RealTimeIncidentsListen.php">
-      <class name="Pedros80\NREphp\Commands\RealTimeIncidentsListen" namespace="global">
-        <metrics complexity="6" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="0" elements="21" coveredelements="0"/>
-      </class>
-      <line num="20" type="method" name="configure" visibility="protected" complexity="1" crap="2" count="0"/>
-      <line num="22" type="stmt" count="0"/>
-      <line num="23" type="stmt" count="0"/>
-      <line num="26" type="method" name="execute" visibility="protected" complexity="5" crap="30" count="0"/>
-      <line num="28" type="stmt" count="0"/>
-      <line num="29" type="stmt" count="0"/>
-      <line num="32" type="stmt" count="0"/>
-      <line num="33" type="stmt" count="0"/>
-      <line num="34" type="stmt" count="0"/>
-      <line num="35" type="stmt" count="0"/>
-      <line num="37" type="stmt" count="0"/>
-      <line num="39" type="stmt" count="0"/>
-      <line num="41" type="stmt" count="0"/>
-      <line num="42" type="stmt" count="0"/>
-      <line num="43" type="stmt" count="0"/>
-      <line num="44" type="stmt" count="0"/>
-      <line num="45" type="stmt" count="0"/>
-      <line num="47" type="stmt" count="0"/>
-      <line num="49" type="stmt" count="0"/>
-      <line num="50" type="stmt" count="0"/>
-      <line num="52" type="stmt" count="0"/>
-      <metrics loc="56" ncloc="56" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="0" elements="21" coveredelements="0"/>
-    </file>
+<coverage generated="1668640662">
+  <project timestamp="1668640662">
     <file name="/home/runner/work/nrephp/nrephp/src/Exceptions/CantReadMessagesFile.php">
       <class name="Pedros80\NREphp\Exceptions\CantReadMessagesFile" namespace="global">
         <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
@@ -783,6 +729,6 @@
       <line num="44" type="stmt" count="1"/>
       <metrics loc="48" ncloc="48" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="15" coveredelements="15"/>
     </file>
-    <metrics files="51" loc="4731" ncloc="4714" classes="47" methods="133" coveredmethods="119" conditionals="0" coveredconditionals="0" statements="362" coveredstatements="299" elements="495" coveredelements="418"/>
+    <metrics files="49" loc="4619" ncloc="4602" classes="45" methods="129" coveredmethods="119" conditionals="0" coveredconditionals="0" statements="324" coveredstatements="299" elements="453" coveredelements="418"/>
   </project>
 </coverage>
