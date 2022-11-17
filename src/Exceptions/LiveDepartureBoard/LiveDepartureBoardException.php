@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Pedros80\NREphp\Exceptions\LDB;
+namespace Pedros80\NREphp\Exceptions\LiveDepartureBoard;
 
 use DOMDocument;
 use Exception;
 
-final class LDBException extends Exception
+final class LiveDepartureBoardException extends Exception
 {
     private function __construct(string $message)
     {
         parent::__construct($message, 400);
     }
 
-    public static function fromResponse(string $message, ?string $request, ?string $response): LDBException
+    public static function fromResponse(string $message, ?string $request, ?string $response): LiveDepartureBoardException
     {
         if ($request) {
             $xml = new DOMDocument();
@@ -36,6 +36,6 @@ final class LDBException extends Exception
             $response                = $xml->saveXML();
         }
 
-        return new LDBException(implode("\n\n", array_filter([$message, $request, $response])));
+        return new LiveDepartureBoardException(implode("\n\n", array_filter([$message, $request, $response])));
     }
 }

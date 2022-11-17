@@ -8,18 +8,18 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
-use Pedros80\NREphp\Services\HSP;
+use Pedros80\NREphp\Services\HistoricalServicePerformance;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 
-final class HSPTest extends TestCase
+final class HistoricalServicePerformanceTest extends TestCase
 {
     use ProphecyTrait;
 
     public function testInvalidServiceMetricsReturnsSuccessFalse(): void
     {
         $client = $this->prophesize(Client::class);
-        $hsp    = new HSP($client->reveal());
+        $hsp    = new HistoricalServicePerformance($client->reveal());
 
         $client->post('serviceMetrics', [
             'json' => [
@@ -43,7 +43,7 @@ final class HSPTest extends TestCase
     public function testGetServiceMetricsReturnsObject(): void
     {
         $client   = $this->prophesize(Client::class);
-        $hsp      = new HSP($client->reveal());
+        $hsp      = new HistoricalServicePerformance($client->reveal());
         $response = '{"header":{"from_location":"BTN","to_location":"VIC"},"Services":[{"serviceAttributesMetrics":{"origin_location":"BTN","destination_location":"VIC","gbtt_ptd":"0712","gbtt_pta":"0823","toc_code":"GX","matched_services":"1","rids":["201607013361753"]},"Metrics":[{"tolerance_value":"0","num_not_tolerance":"0","num_tolerance":"1","percent_tolerance":"100","global_tolerance":true}]},{"serviceAttributesMetrics":{"origin_location":"BTN","destination_location":"VIC","gbtt_ptd":"0729","gbtt_pta":"0839","toc_code":"GX","matched_services":"1","rids":["201607013361763"]},"Metrics":[{"tolerance_value":"0","num_not_tolerance":"0","num_tolerance":"1","percent_tolerance":"100","global_tolerance":true}]},{"serviceAttributesMetrics":{"origin_location":"BTN","destination_location":"VIC","gbtt_ptd":"0744","gbtt_pta":"0855","toc_code":"GX","matched_services":"1","rids":["201607013361777"]},"Metrics":[{"tolerance_value":"0","num_not_tolerance":"0","num_tolerance":"1","percent_tolerance":"100","global_tolerance":true}]}]}';
 
         $client->post('serviceMetrics', [
@@ -75,7 +75,7 @@ final class HSPTest extends TestCase
             ]
         ])->willReturn(new Response(200, [], $response));
 
-        $hsp    = new HSP($client->reveal());
+        $hsp    = new HistoricalServicePerformance($client->reveal());
         $result = $hsp->getServiceDetails('201607013361763');
 
         $this->assertIsObject($result);
@@ -91,7 +91,7 @@ final class HSPTest extends TestCase
             ]
         ])->willThrow(new ConnectException('connection problems. fml', new Request('post', 'serviceMetrics')));
 
-        $hsp    = new HSP($client->reveal());
+        $hsp    = new HistoricalServicePerformance($client->reveal());
         $result = $hsp->getServiceDetails('201607013361763');
 
         $this->assertIsObject($result);

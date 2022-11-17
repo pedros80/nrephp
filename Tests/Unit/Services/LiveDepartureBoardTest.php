@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Services;
 
-use Pedros80\NREphp\Exceptions\LDB\LDBException;
-use Pedros80\NREphp\Services\LDB;
+use Pedros80\NREphp\Exceptions\LiveDepartureBoard\LiveDepartureBoardException;
+use Pedros80\NREphp\Services\LiveDepartureBoard;
 use PHPUnit\Framework\TestCase;
 use SoapFault;
 use Tests\MockSoapClient;
 
-final class LDBTest extends TestCase
+final class LiveDepartureBoardTest extends TestCase
 {
-    private LDB $ldb;
+    private LiveDepartureBoard $ldb;
 
     public function setUp(): void
     {
@@ -47,7 +47,7 @@ final class LDBTest extends TestCase
         };
         $client = new MockSoapClient($responses);
 
-        $this->ldb = new LDB($client);
+        $this->ldb = new LiveDepartureBoard($client);
     }
 
     public function testGetDepartureBoardReturnsObject(): void
@@ -105,9 +105,9 @@ final class LDBTest extends TestCase
         $this->assertIsObject($this->ldb->getServiceDetails('mzCXFZ9LoeqyY0veTB6FfA=='));
     }
 
-    public function testLDBCanThrowException(): void
+    public function testLiveDepartureBoardCanThrowException(): void
     {
-        $this->expectException(LDBException::class);
+        $this->expectException(LiveDepartureBoardException::class);
         $this->assertIsObject($this->ldb->getServiceDetails('INVALID'));
     }
 }

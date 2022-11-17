@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Pedros80\NREphp\Params\LDB;
+namespace Pedros80\NREphp\Params\LiveDepartureBoard;
 
 use Pedros80\NREphp\Exceptions\InvalidFilterList;
 use Pedros80\NREphp\Params\StationCode;

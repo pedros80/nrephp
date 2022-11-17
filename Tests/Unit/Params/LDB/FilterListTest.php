@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tests\Unit\Params\LDB;
+namespace Tests\Unit\Params\LiveDepartureBoard;
 
 use Pedros80\NREphp\Exceptions\InvalidFilterList;
 use Pedros80\NREphp\Exceptions\InvalidStationCode;
-use Pedros80\NREphp\Params\LDB\FilterList;
+use Pedros80\NREphp\Params\LiveDepartureBoard\FilterList;
 use PHPUnit\Framework\TestCase;
 
 final class FilterListTest extends TestCase

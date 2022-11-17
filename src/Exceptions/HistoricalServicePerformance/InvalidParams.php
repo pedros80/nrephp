@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Pedros80\NREphp\Exceptions\HSP;
+namespace Pedros80\NREphp\Exceptions\HistoricalServicePerformance;
 
 use Exception;
 

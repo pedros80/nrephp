@@ -6,8 +6,8 @@ namespace Pedros80\Build\Commands;
 
 use Pedros80\Build\Writers\Writer;
 use Pedros80\Build\Writers\WriterFactory;
-use Pedros80\NREphp\OpenData\DTD\DTD;
-use Pedros80\NREphp\OpenData\Factories\ServicesFactory;
+use Pedros80\NREphp\Factories\ServicesFactory;
+use Pedros80\NREphp\Services\DTD;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;

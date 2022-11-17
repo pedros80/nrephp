@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tests\Unit\Params\LDB;
+namespace Tests\Unit\Params\LiveDepartureBoard;
 
 use Pedros80\NREphp\Exceptions\InvalidFilterType;
-use Pedros80\NREphp\Params\LDB\FilterType;
+use Pedros80\NREphp\Params\LiveDepartureBoard\FilterType;
 use PHPUnit\Framework\TestCase;
 
 final class FilterTypeTest extends TestCase

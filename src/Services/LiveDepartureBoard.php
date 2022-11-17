@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace Pedros80\NREphp\Services;
 
-use Pedros80\NREphp\Exceptions\LDB\LDBException;
-use Pedros80\NREphp\Params\LDB\FilterList;
-use Pedros80\NREphp\Params\LDB\NumRows;
-use Pedros80\NREphp\Params\LDB\Params;
+use Pedros80\NREphp\Exceptions\LiveDepartureBoard\LiveDepartureBoardException;
+use Pedros80\NREphp\Params\LiveDepartureBoard\FilterList;
+use Pedros80\NREphp\Params\LiveDepartureBoard\NumRows;
+use Pedros80\NREphp\Params\LiveDepartureBoard\Params;
 use SoapClient;
 use SoapFault;
 use stdClass;
 
-final class LDB
+final class LiveDepartureBoard
 {
     public function __construct(
         private SoapClient $client,
@@ -187,7 +187,7 @@ final class LDB
         try {
             return $this->client->$method($params->toArray());
         } catch (SoapFault $e) {
-            throw LDBException::fromResponse(
+            throw LiveDepartureBoardException::fromResponse(
                 $e->getMessage(),
                 $this->client->__getLastRequest(),
                 $this->client->__getLastResponse()

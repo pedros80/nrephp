@@ -6,10 +6,10 @@ namespace Pedros80\NREphp\Services;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ConnectException;
-use Pedros80\NREphp\Params\HSP\Params;
+use Pedros80\NREphp\Params\HistoricalServicePerformance\Params;
 use stdClass;
 
-final class HSP
+final class HistoricalServicePerformance
 {
     public function __construct(
         private Client $client

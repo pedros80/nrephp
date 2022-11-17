@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tests\Unit\Params\HSP;
+namespace Tests\Unit\Params\HistoricalServicePerformance;
 
 use Pedros80\NREphp\Exceptions\InvalidTolerance;
-use Pedros80\NREphp\Params\HSP\Tolerance;
+use Pedros80\NREphp\Params\HistoricalServicePerformance\Tolerance;
 use PHPUnit\Framework\TestCase;
 
 final class ToleranceTest extends TestCase

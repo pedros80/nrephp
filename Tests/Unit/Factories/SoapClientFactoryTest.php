@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Factories;
 
-use Pedros80\NREphp\Exceptions\LDB\LDBException;
+use Pedros80\NREphp\Exceptions\LiveDepartureBoard\LiveDepartureBoardException;
 use Pedros80\NREphp\Factories\SoapClientFactory;
-use Pedros80\NREphp\Services\LDB;
+use Pedros80\NREphp\Services\LiveDepartureBoard;
 use PHPUnit\Framework\TestCase;
 use SoapClient;
 
@@ -28,12 +28,12 @@ final class SoapClientFactoryTest extends TestCase
 
     public function testInvalidKeyClientThrowsException(): void
     {
-        $this->expectException(LDBException::class);
+        $this->expectException(LiveDepartureBoardException::class);
 
         $factory = new SoapClientFactory();
         $client = $factory->make('blah blah blah', true);
 
-        $ldb = new LDB($client);
+        $ldb = new LiveDepartureBoard($client);
 
         $ldb->getServiceDetails('blah blah blah');
     }

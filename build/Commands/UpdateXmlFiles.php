@@ -6,8 +6,8 @@ namespace Pedros80\Build\Commands;
 
 use Pedros80\Build\Writers\Writer;
 use Pedros80\Build\Writers\WriterFactory;
-use Pedros80\NREphp\OpenData\Factories\ServicesFactory;
-use Pedros80\NREphp\OpenData\KnowledgeBase\KB;
+use Pedros80\NREphp\Factories\ServicesFactory;
+use Pedros80\NREphp\Services\KnowledgeBase;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -24,7 +24,7 @@ final class UpdateXmlFiles extends Command
     private bool $dry;
 
     private Writer $writer;
-    private KB $kb;
+    private KnowledgeBase $kb;
 
     private const FEEDS = [
         'serviceIndicators',
@@ -50,7 +50,7 @@ final class UpdateXmlFiles extends Command
         $this->token  = $input->getArgument('token');
         $this->single = $input->getArgument('feed');
         $this->dry    = $input->getOption('dry-run');
-        $this->kb     = $serviceFactory->makeKB();
+        $this->kb     = $serviceFactory->makeKnowledgeBase();
         $this->writer = $this->getWriter();
 
         $this->results($this->doFeeds(), $output);

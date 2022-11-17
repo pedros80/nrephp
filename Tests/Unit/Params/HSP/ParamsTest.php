@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tests\Unit\Params\HSP;
+namespace Tests\Unit\Params\HistoricalServicePerformance;
 
-use Pedros80\NREphp\Exceptions\HSP\InvalidParams;
-use Pedros80\NREphp\Params\HSP\Params;
+use Pedros80\NREphp\Exceptions\HistoricalServicePerformance\InvalidParams;
+use Pedros80\NREphp\Params\HistoricalServicePerformance\Params;
 use PHPUnit\Framework\TestCase;
 
 final class ParamsTest extends TestCase

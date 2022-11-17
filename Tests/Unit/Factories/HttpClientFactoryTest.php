@@ -20,7 +20,7 @@ final class HttpClientFactoryTest extends TestCase
     public function testFactoryCanCreateAClient(): void
     {
         $factory = new HttpClientFactory();
-        $client = $factory->makeHSPClient('user', 'pass');
+        $client = $factory->makeHistoricalServicePerformanceClient('user', 'pass');
 
         $this->assertInstanceOf(Client::class, $client);
     }

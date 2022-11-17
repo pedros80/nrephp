@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tests\Unit\Params\LDB;
+namespace Tests\Unit\Params\LiveDepartureBoard;
 
 use Pedros80\NREphp\Exceptions\InvalidTimeWindow;
-use Pedros80\NREphp\Params\LDB\TimeWindow;
+use Pedros80\NREphp\Params\LiveDepartureBoard\TimeWindow;
 use PHPUnit\Framework\TestCase;
 
 final class TimeWindowTest extends TestCase

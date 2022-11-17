@@ -15,7 +15,7 @@ final class HttpClientFactory
     private const API_URI    = 'https://opendata.nationalrail.co.uk/api/staticfeeds/';
     private const TIMEOUT    = 20;
 
-    public function makeHSPClient(string $user, string $pass): Client
+    public function makeHistoricalServicePerformanceClient(string $user, string $pass): Client
     {
         $auth = base64_encode("{$user}:{$pass}");
 

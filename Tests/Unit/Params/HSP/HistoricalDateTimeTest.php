@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tests\Unit\Params\HSP;
+namespace Tests\Unit\Params\HistoricalServicePerformance;
 
 use Pedros80\NREphp\Exceptions\InvalidHistoricalDateTime;
-use Pedros80\NREphp\Params\HSP\HistoricalDateTime;
+use Pedros80\NREphp\Params\HistoricalServicePerformance\HistoricalDateTime;
 use PHPUnit\Framework\TestCase;
 
 final class HistoricalDateTimeTest extends TestCase

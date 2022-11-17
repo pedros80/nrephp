@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Pedros80\NREphp\Params\LDB;
+namespace Pedros80\NREphp\Params\LiveDepartureBoard;
 
-use Pedros80\NREphp\Exceptions\InvalidTimeWindow;
+use Pedros80\NREphp\Exceptions\InvalidTimeOffset;
 
-final class TimeWindow
+final class TimeOffset
 {
     public const MIN = -120;
     public const MAX = 120;
@@ -15,7 +15,7 @@ final class TimeWindow
         private int $offset
     ) {
         if ($offset < self::MIN || $offset > self::MAX) {
-            throw InvalidTimeWindow::fromNumber($offset);
+            throw InvalidTimeOffset::fromNumber($offset);
         }
     }
 

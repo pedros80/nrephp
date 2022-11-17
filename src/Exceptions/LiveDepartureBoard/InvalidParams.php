@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Pedros80\NREphp\Exceptions\LDB;
+namespace Pedros80\NREphp\Exceptions\LiveDepartureBoard;
 
 use Exception;
 

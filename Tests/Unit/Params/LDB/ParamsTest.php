@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tests\Unit\Params\LDB;
+namespace Tests\Unit\Params\LiveDepartureBoard;
 
-use Pedros80\NREphp\Exceptions\LDB\InvalidParams;
-use Pedros80\NREphp\Params\LDB\Params;
+use Pedros80\NREphp\Exceptions\LiveDepartureBoard\InvalidParams;
+use Pedros80\NREphp\Params\LiveDepartureBoard\Params;
 use PHPUnit\Framework\TestCase;
 
 final class ParamsTest extends TestCase

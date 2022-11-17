@@ -2,9 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Pedros80\NREphp\Params\HSP;
+namespace Pedros80\NREphp\Params\HistoricalServicePerformance;
 
-use Pedros80\NREphp\Exceptions\HSP\InvalidParams;
+use Pedros80\NREphp\Exceptions\HistoricalServicePerformance\InvalidParams;
+use Pedros80\NREphp\Params\HistoricalServicePerformance\Days;
+use Pedros80\NREphp\Params\HistoricalServicePerformance\HistoricalDateTime;
+use Pedros80\NREphp\Params\HistoricalServicePerformance\Rid;
+use Pedros80\NREphp\Params\HistoricalServicePerformance\Tolerance;
 use Pedros80\NREphp\Params\StationCode;
 use Pedros80\NREphp\Params\TOC;
 

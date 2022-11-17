@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Pedros80\NREphp\Exceptions;
 
 use Exception;
-use Pedros80\NREphp\Params\HSP\Days;
+use Pedros80\NREphp\Params\HistoricalServicePerformance\Days;
 
 final class InvalidDays extends Exception
 {

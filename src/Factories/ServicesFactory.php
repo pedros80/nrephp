@@ -8,29 +8,29 @@ use Pedros80\NREphp\Factories\FileClientFactory;
 use Pedros80\NREphp\Factories\HttpClientFactory;
 use Pedros80\NREphp\Factories\SoapClientFactory;
 use Pedros80\NREphp\Services\DTD;
-use Pedros80\NREphp\Services\HSP;
-use Pedros80\NREphp\Services\KB;
-use Pedros80\NREphp\Services\LDB;
+use Pedros80\NREphp\Services\HistoricalServicePerformance;
+use Pedros80\NREphp\Services\KnowledgeBase;
+use Pedros80\NREphp\Services\LiveDepartureBoard;
 use Pedros80\NREphp\Services\PushPortFiles;
 use Pedros80\NREphp\Services\TimetableFiles;
 use Pedros80\NREphp\Services\TokenGenerator;
 
 final class ServicesFactory
 {
-    public function makeLDB(string $key, bool $trace = false): LDB
+    public function makeLiveDepartureBoard(string $key, bool $trace = false): LiveDepartureBoard
     {
         $clientFactory = new SoapClientFactory();
         $client        = $clientFactory->make($key, $trace);
 
-        return new LDB($client);
+        return new LiveDepartureBoard($client);
     }
 
-    public function makeHSP(string $user, string $pass): HSP
+    public function makeHistoricalServicePerformance(string $user, string $pass): HistoricalServicePerformance
     {
         $clientFactory = new HttpClientFactory();
-        $client        = $clientFactory->makeHSPClient($user, $pass);
+        $client        = $clientFactory->makeHistoricalServicePerformanceClient($user, $pass);
 
-        return new HSP($client);
+        return new HistoricalServicePerformance($client);
     }
 
     public function makePushPortFiles(string $user, string $pass): PushPortFiles
@@ -57,12 +57,12 @@ final class ServicesFactory
         return new DTD($client);
     }
 
-    public function makeKB(): KB
+    public function makeKnowledgeBase(): KnowledgeBase
     {
         $clientFactory = new HttpClientFactory();
         $client        = $clientFactory->makeClient();
 
-        return new KB($client);
+        return new KnowledgeBase($client);
     }
 
     public function makeTokenGenerator(): TokenGenerator

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Pedros80\NREphp\Params\HSP;
+namespace Pedros80\NREphp\Params\HistoricalServicePerformance;
 
 final class Rid
 {

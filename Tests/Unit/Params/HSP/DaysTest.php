@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tests\Unit\Params\HSP;
+namespace Tests\Unit\Params\HistoricalServicePerformance;
 
 use Pedros80\NREphp\Exceptions\InvalidDays;
-use Pedros80\NREphp\Params\HSP\Days;
+use Pedros80\NREphp\Params\HistoricalServicePerformance\Days;
 use PHPUnit\Framework\TestCase;
 
 final class DaysTest extends TestCase

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Pedros80\NREphp\Services;
 
-final class KB extends Service
+final class KnowledgeBase extends Service
 {
     public function serviceIndicators(string $token): string
     {

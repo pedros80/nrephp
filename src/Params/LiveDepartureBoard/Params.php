@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Pedros80\NREphp\Params\LDB;
+namespace Pedros80\NREphp\Params\LiveDepartureBoard;
 
-use Pedros80\NREphp\Exceptions\LDB\InvalidParams;
-use Pedros80\NREphp\Params\LDB\FilterList;
-use Pedros80\NREphp\Params\LDB\FilterType;
-use Pedros80\NREphp\Params\LDB\NumRows;
-use Pedros80\NREphp\Params\LDB\ServiceID;
-use Pedros80\NREphp\Params\LDB\TimeOffset;
-use Pedros80\NREphp\Params\LDB\TimeWindow;
+use Pedros80\NREphp\Exceptions\LiveDepartureBoard\InvalidParams;
+use Pedros80\NREphp\Params\LiveDepartureBoard\FilterList;
+use Pedros80\NREphp\Params\LiveDepartureBoard\FilterType;
+use Pedros80\NREphp\Params\LiveDepartureBoard\NumRows;
+use Pedros80\NREphp\Params\LiveDepartureBoard\ServiceID;
+use Pedros80\NREphp\Params\LiveDepartureBoard\TimeOffset;
+use Pedros80\NREphp\Params\LiveDepartureBoard\TimeWindow;
 use Pedros80\NREphp\Params\StationCode;
 
 final class Params

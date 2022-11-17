@@ -6,26 +6,26 @@ namespace Tests\Unit\Services;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
-use Pedros80\NREphp\Services\KB;
+use Pedros80\NREphp\Services\KnowledgeBase;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 
-final class KBTest extends TestCase
+final class KnowledgeBaseTest extends TestCase
 {
     use ProphecyTrait;
 
-    public function testKBCanBeInstantiated(): void
+    public function testKnowledgeBaseCanBeInstantiated(): void
     {
         $client = $this->prophesize(Client::class);
-        $kb     = new KB($client->reveal());
+        $kb     = new KnowledgeBase($client->reveal());
 
-        $this->assertInstanceOf(KB::class, $kb);
+        $this->assertInstanceOf(KnowledgeBase::class, $kb);
     }
 
     public function testServiceIndicatorsReturnsAString(): void
     {
         $client = $this->prophesize(Client::class);
-        $kb     = new KB($client->reveal());
+        $kb     = new KnowledgeBase($client->reveal());
 
         $client->get('4.0/serviceIndicators', [
             'headers' => [
@@ -41,7 +41,7 @@ final class KBTest extends TestCase
     public function testIncidentsReturnsAString(): void
     {
         $client = $this->prophesize(Client::class);
-        $kb     = new KB($client->reveal());
+        $kb     = new KnowledgeBase($client->reveal());
 
         $client->get('5.0/incidents', [
             'headers' => [
@@ -57,7 +57,7 @@ final class KBTest extends TestCase
     public function testTocsReturnsAString(): void
     {
         $client = $this->prophesize(Client::class);
-        $kb     = new KB($client->reveal());
+        $kb     = new KnowledgeBase($client->reveal());
 
         $client->get('4.0/tocs', [
             'headers' => [
@@ -73,7 +73,7 @@ final class KBTest extends TestCase
     public function testTicketRestrictionsReturnsAString(): void
     {
         $client = $this->prophesize(Client::class);
-        $kb     = new KB($client->reveal());
+        $kb     = new KnowledgeBase($client->reveal());
 
         $client->get('4.0/ticket-restrictions', [
             'headers' => [
@@ -89,7 +89,7 @@ final class KBTest extends TestCase
     public function testTicketTypesReturnsAString(): void
     {
         $client = $this->prophesize(Client::class);
-        $kb     = new KB($client->reveal());
+        $kb     = new KnowledgeBase($client->reveal());
 
         $client->get('4.0/ticket-types', [
             'headers' => [
@@ -105,7 +105,7 @@ final class KBTest extends TestCase
     public function testPublicPromotionsReturnsAString(): void
     {
         $client = $this->prophesize(Client::class);
-        $kb     = new KB($client->reveal());
+        $kb     = new KnowledgeBase($client->reveal());
 
         $client->get('4.0/promotions-publics', [
             'headers' => [
@@ -121,7 +121,7 @@ final class KBTest extends TestCase
     public function testStationsReturnsAString(): void
     {
         $client = $this->prophesize(Client::class);
-        $kb     = new KB($client->reveal());
+        $kb     = new KnowledgeBase($client->reveal());
 
         $client->get('4.0/stations', [
             'headers' => [

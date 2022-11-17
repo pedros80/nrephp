@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tests\Unit\Params\LDB;
+namespace Tests\Unit\Params\LiveDepartureBoard;
 
-use Pedros80\NREphp\Params\LDB\ServiceID;
+use Pedros80\NREphp\Params\LiveDepartureBoard\ServiceID;
 use PHPUnit\Framework\TestCase;
 
 final class ServiceIDTest extends TestCase
