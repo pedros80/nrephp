@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668728906">
-  <project timestamp="1668728906">
+<coverage generated="1668729342">
+  <project timestamp="1668729342">
     <file name="/home/runner/work/nrephp/nrephp/src/Exceptions/CantReadMessagesFile.php">
       <class name="Pedros80\NREphp\Exceptions\CantReadMessagesFile" namespace="global">
         <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
@@ -671,12 +671,13 @@
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/Services/TokenGenerator.php">
       <class name="Pedros80\NREphp\Services\TokenGenerator" namespace="global">
-        <metrics complexity="4" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="15" coveredelements="15"/>
+        <metrics complexity="4" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="16" coveredelements="16"/>
       </class>
       <line num="13" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="4"/>
       <line num="20" type="method" name="get" visibility="public" complexity="2" crap="2" count="2"/>
       <line num="23" type="stmt" count="2"/>
       <line num="25" type="stmt" count="2"/>
+      <line num="26" type="stmt" count="2"/>
       <line num="30" type="stmt" count="1"/>
       <line num="31" type="stmt" count="1"/>
       <line num="33" type="stmt" count="1"/>
@@ -687,8 +688,8 @@
       <line num="44" type="stmt" count="1"/>
       <line num="45" type="stmt" count="1"/>
       <line num="46" type="stmt" count="1"/>
-      <metrics loc="50" ncloc="50" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="15" coveredelements="15"/>
+      <metrics loc="50" ncloc="50" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="16" coveredelements="16"/>
     </file>
-    <metrics files="46" loc="4553" ncloc="4536" classes="42" methods="124" coveredmethods="114" conditionals="0" coveredconditionals="0" statements="307" coveredstatements="274" elements="431" coveredelements="388"/>
+    <metrics files="46" loc="4553" ncloc="4536" classes="42" methods="124" coveredmethods="114" conditionals="0" coveredconditionals="0" statements="308" coveredstatements="275" elements="432" coveredelements="389"/>
   </project>
 </coverage>
