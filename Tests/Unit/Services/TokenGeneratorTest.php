@@ -20,7 +20,7 @@ final class TokenGeneratorTest extends TestCase
     {
         $client = $this->prophesize(Client::class);
 
-        $tg = new TokenGenerator($client->reveal());
+        $tg = new TokenGenerator($client->reveal(), 'user', 'pass');
 
         $this->assertInstanceOf(TokenGenerator::class, $tg);
     }
@@ -36,7 +36,7 @@ final class TokenGeneratorTest extends TestCase
             ]
         ])->willReturn(new Response(200, [], '{"token":"username:1668153791000:access_token"}'));
 
-        $tg    = new TokenGenerator($client->reveal());
+        $tg    = new TokenGenerator($client->reveal(), 'username', 'password');
         $token = $tg->get('username', 'password');
 
         $this->assertIsArray($token);
@@ -59,7 +59,7 @@ final class TokenGeneratorTest extends TestCase
             ]
         ])->willThrow(new Exception('Problem with response'));
 
-        $tg = new TokenGenerator($client->reveal());
+        $tg = new TokenGenerator($client->reveal(), 'username', 'password');
         $tg->get('username', 'password');
     }
 }

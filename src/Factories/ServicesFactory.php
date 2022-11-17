@@ -127,7 +127,7 @@ final class ServicesFactory
         return new KnowledgeBase($this->makeClient());
     }
 
-    public function makeTokenGenerator(): TokenGenerator
+    public function makeTokenGenerator(string $user, string $pass): TokenGenerator
     {
         return new TokenGenerator(
             new Client([
@@ -137,7 +137,9 @@ final class ServicesFactory
                     'Content-Type' => 'application/x-www-form-urlencoded',
                 ],
                 RequestOptions::TIMEOUT => self::TIMEOUT,
-            ])
+            ]),
+            $user,
+            $pass
         );
     }
 

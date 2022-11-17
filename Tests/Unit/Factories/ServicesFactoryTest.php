@@ -74,7 +74,7 @@ final class ServicesFactoryTest extends TestCase
     public function testServicesFactoryCanMakeTokenGenerator(): void
     {
         $factory        = new ServicesFactory();
-        $tokenGenerator = $factory->makeTokenGenerator();
+        $tokenGenerator = $factory->makeTokenGenerator('user', 'pass');
 
         $this->assertInstanceOf(TokenGenerator::class, $tokenGenerator);
     }

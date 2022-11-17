@@ -11,7 +11,9 @@ use Throwable;
 final class TokenGenerator
 {
     public function __construct(
-        private Client $client
+        private Client $client,
+        private string $user,
+        private string $pass
     ) {
     }
 
