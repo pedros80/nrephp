@@ -21,9 +21,9 @@ final class GetToken extends Command
         [$user, $pass] = $this->parseArguments($input);
 
         $serviceFactory = new ServicesFactory();
-        $tokenGenerator = $serviceFactory->makeTokenGenerator();
+        $tokenGenerator = $serviceFactory->makeTokenGenerator($user, $pass);
 
-        $this->displayToken($output, $tokenGenerator->get($user, $pass));
+        $this->displayToken($output, $tokenGenerator->get());
 
         return Command::SUCCESS;
     }

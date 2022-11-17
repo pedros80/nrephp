@@ -17,13 +17,13 @@ final class TokenGenerator
     ) {
     }
 
-    public function get(string $user, string $pass): array
+    public function get(): array
     {
         try {
             $response = $this->client->post('', [
                 'form_params' => [
-                    'username' => $user,
-                    'password' => $pass,
+                    'username' => $this->user,
+                    'password' => $this->pass,
                 ],
             ]);
 
