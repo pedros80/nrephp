@@ -1,6 +1,6 @@
 {
     "name": "pedros80/nrephp",
-    "description": "php wrapper for National Railway Enquiries API",
+    "description": "php wrapper for National Railway Enquiries APIs; Darwin, Historical Service Performance, KnowledgeBase etc...",
     "authors": [
         {
             "name": "Peter Somerville",
