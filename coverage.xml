@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668718159">
-  <project timestamp="1668718159">
+<coverage generated="1668728906">
+  <project timestamp="1668728906">
     <file name="/home/runner/work/nrephp/nrephp/src/Exceptions/CantReadMessagesFile.php">
       <class name="Pedros80\NREphp\Exceptions\CantReadMessagesFile" namespace="global">
         <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
@@ -242,9 +242,9 @@
       <line num="130" type="method" name="makeTokenGenerator" visibility="public" complexity="1" crap="1" count="1"/>
       <line num="132" type="stmt" count="1"/>
       <line num="133" type="stmt" count="1"/>
-      <line num="144" type="method" name="makeClient" visibility="private" complexity="1" crap="1" count="2"/>
-      <line num="146" type="stmt" count="2"/>
-      <metrics loc="155" ncloc="155" classes="1" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="26" elements="34" coveredelements="34"/>
+      <line num="146" type="method" name="makeClient" visibility="private" complexity="1" crap="1" count="2"/>
+      <line num="148" type="stmt" count="2"/>
+      <metrics loc="157" ncloc="157" classes="1" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="26" elements="34" coveredelements="34"/>
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/Params/HistoricalServicePerformance/Days.php">
       <class name="Pedros80\NREphp\Params\HistoricalServicePerformance\Days" namespace="global">
@@ -674,21 +674,21 @@
         <metrics complexity="4" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="15" coveredelements="15"/>
       </class>
       <line num="13" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="4"/>
-      <line num="18" type="method" name="get" visibility="public" complexity="2" crap="2" count="2"/>
-      <line num="21" type="stmt" count="2"/>
+      <line num="20" type="method" name="get" visibility="public" complexity="2" crap="2" count="2"/>
       <line num="23" type="stmt" count="2"/>
-      <line num="28" type="stmt" count="1"/>
-      <line num="29" type="stmt" count="1"/>
+      <line num="25" type="stmt" count="2"/>
+      <line num="30" type="stmt" count="1"/>
       <line num="31" type="stmt" count="1"/>
-      <line num="32" type="stmt" count="1"/>
       <line num="33" type="stmt" count="1"/>
-      <line num="37" type="method" name="parseToken" visibility="private" complexity="1" crap="1" count="1"/>
-      <line num="39" type="stmt" count="1"/>
-      <line num="42" type="stmt" count="1"/>
-      <line num="43" type="stmt" count="1"/>
+      <line num="34" type="stmt" count="1"/>
+      <line num="35" type="stmt" count="1"/>
+      <line num="39" type="method" name="parseToken" visibility="private" complexity="1" crap="1" count="1"/>
+      <line num="41" type="stmt" count="1"/>
       <line num="44" type="stmt" count="1"/>
-      <metrics loc="48" ncloc="48" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="15" coveredelements="15"/>
+      <line num="45" type="stmt" count="1"/>
+      <line num="46" type="stmt" count="1"/>
+      <metrics loc="50" ncloc="50" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="15" coveredelements="15"/>
     </file>
-    <metrics files="46" loc="4549" ncloc="4532" classes="42" methods="124" coveredmethods="114" conditionals="0" coveredconditionals="0" statements="307" coveredstatements="274" elements="431" coveredelements="388"/>
+    <metrics files="46" loc="4553" ncloc="4536" classes="42" methods="124" coveredmethods="114" conditionals="0" coveredconditionals="0" statements="307" coveredstatements="274" elements="431" coveredelements="388"/>
   </project>
 </coverage>
