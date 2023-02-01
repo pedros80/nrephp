@@ -4,6 +4,7 @@
 require __DIR__ . '/vendor/autoload.php';
 
 use Pedros80\Build\Commands\BuildClasses;
+use Pedros80\Build\Commands\GetStationData;
 use Pedros80\Build\Commands\GetToken;
 use Pedros80\Build\Commands\UpdateXmlFiles;
 use Pedros80\Build\Commands\UpdateZipFiles;
@@ -19,5 +20,6 @@ $application->add(new UpdateXmlFiles());
 $application->add(new UpdateZipFiles());
 $application->add(new PushPortListen());
 $application->add(new RealTimeIncidentsListen());
+$application->add(new GetStationData());
 
 $application->run();
