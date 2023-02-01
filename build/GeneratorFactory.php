@@ -15,23 +15,21 @@ use Pedros80\Build\TOCs\Parser as TOCsParser;
 final class GeneratorFactory
 {
     private Printer $printer;
-    private Filesystem $localFiles;
 
     public function __construct()
     {
-        $this->printer    = new Printer();
-        $this->localFiles = new Filesystem(new LocalFilesystemAdapter('data'));
+        $this->printer = new Printer();
     }
 
     public function make(): array
     {
         return [
             new StationCodesGenerator(
-                new StationCodesParser($this->localFiles),
+                new StationCodesParser(),
                 $this->printer
             ),
             new TOCsGenerator(
-                new TOCsParser($this->localFiles),
+                new TOCsParser(new Filesystem(new LocalFilesystemAdapter('data'))),
                 $this->printer
             ),
         ];

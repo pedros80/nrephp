@@ -41,6 +41,12 @@ final class Generator extends BuildGenerator
                 'body'   => 'return new StationCode(array_rand(self::STATIONS));',
                 'return' => 'Pedros80\NREphp\Params\StationCode',
             ],
+            [
+                'name'   => 'list',
+                'static' => true,
+                'body'   => 'return self::STATIONS;',
+                'return' => 'array',
+            ],
         ];
     }
 

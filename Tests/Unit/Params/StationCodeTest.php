@@ -42,4 +42,11 @@ final class StationCodeTest extends TestCase
 
         $this->assertInstanceOf(StationCode::class, $station);
     }
+
+    public function testListReturnsArray(): void
+    {
+        $stations = StationCode::list();
+
+        $this->assertIsArray($stations);
+    }
 }
