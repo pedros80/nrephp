@@ -37,7 +37,7 @@ final class TokenGeneratorTest extends TestCase
         ])->willReturn(new Response(200, [], '{"token":"username:1668153791000:access_token"}'));
 
         $tg    = new TokenGenerator($client->reveal(), 'username', 'password');
-        $token = $tg->get('username', 'password');
+        $token = $tg->get();
 
         $this->assertIsArray($token);
         $this->assertEquals('username:1668153791000:access_token', $token['token']);
@@ -60,6 +60,6 @@ final class TokenGeneratorTest extends TestCase
         ])->willThrow(new Exception('Problem with response'));
 
         $tg = new TokenGenerator($client->reveal(), 'username', 'password');
-        $tg->get('username', 'password');
+        $tg->get();
     }
 }
