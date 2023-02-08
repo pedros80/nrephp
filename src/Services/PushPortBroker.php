@@ -12,7 +12,7 @@ final class PushPortBroker extends Broker
     protected const PORT = 61613;
 
     protected const TOPICS = [
-        'darwinpushport-v16',
+        'darwin.pushport-v16',
         'darwin.status',
     ];
 
