@@ -19,6 +19,7 @@ abstract class Broker
         $connection = new Connection("tcp://{$host}:{$port}");
         $client     = new Client($connection);
         $client->setLogin($user, $pass);
+        $client->setClientId($user);
         // Once we've created the Stomp connection and client, we will add a heartbeat
         // to periodically let ActiveMQ know our connection is alive and healthy.
         $client->setHeartbeat(500);
@@ -31,7 +32,8 @@ abstract class Broker
         $client->connect();
 
         foreach ($topics as $topic) {
-            $this->client->subscribe("/topic/{$topic}", null, 'client-individual');
+            $subName = "{$user}-{$topic}";
+            $this->client->subscribe("/topic/{$topic}", null, 'client-individual', ['activemq.subscriptionName' => $subName]);
         }
     }
 
