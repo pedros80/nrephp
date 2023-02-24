@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1675890922">
-  <project timestamp="1675890922">
+<coverage generated="1677281370">
+  <project timestamp="1677281370">
     <file name="/home/runner/work/nrephp/nrephp/src/Exceptions/CantReadMessagesFile.php">
       <class name="Pedros80\NREphp\Exceptions\CantReadMessagesFile" namespace="global">
         <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
@@ -493,27 +493,29 @@
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/Services/Broker.php">
       <class name="Pedros80\NREphp\Services\Broker" namespace="global">
-        <metrics complexity="6" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="0" elements="18" coveredelements="0"/>
+        <metrics complexity="6" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="0" elements="20" coveredelements="0"/>
       </class>
       <line num="17" type="method" name="__construct" visibility="public" complexity="2" crap="6" count="0"/>
       <line num="19" type="stmt" count="0"/>
       <line num="20" type="stmt" count="0"/>
       <line num="21" type="stmt" count="0"/>
-      <line num="24" type="stmt" count="0"/>
+      <line num="22" type="stmt" count="0"/>
       <line num="25" type="stmt" count="0"/>
-      <line num="27" type="stmt" count="0"/>
+      <line num="26" type="stmt" count="0"/>
       <line num="28" type="stmt" count="0"/>
-      <line num="30" type="stmt" count="0"/>
+      <line num="29" type="stmt" count="0"/>
       <line num="31" type="stmt" count="0"/>
-      <line num="33" type="stmt" count="0"/>
+      <line num="32" type="stmt" count="0"/>
       <line num="34" type="stmt" count="0"/>
-      <line num="38" type="method" name="read" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="40" type="stmt" count="0"/>
-      <line num="43" type="method" name="ack" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="45" type="stmt" count="0"/>
-      <line num="48" type="method" name="nack" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="50" type="stmt" count="0"/>
-      <metrics loc="53" ncloc="49" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="0" elements="18" coveredelements="0"/>
+      <line num="35" type="stmt" count="0"/>
+      <line num="36" type="stmt" count="0"/>
+      <line num="40" type="method" name="read" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="42" type="stmt" count="0"/>
+      <line num="45" type="method" name="ack" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="47" type="stmt" count="0"/>
+      <line num="50" type="method" name="nack" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="52" type="stmt" count="0"/>
+      <metrics loc="55" ncloc="51" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="0" elements="20" coveredelements="0"/>
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/Services/DTD.php">
       <class name="Pedros80\NREphp\Services\DTD" namespace="global">
@@ -713,6 +715,6 @@
       <line num="46" type="stmt" count="1"/>
       <metrics loc="50" ncloc="50" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="16" coveredelements="16"/>
     </file>
-    <metrics files="48" loc="4618" ncloc="4601" classes="44" methods="129" coveredmethods="119" conditionals="0" coveredconditionals="0" statements="315" coveredstatements="282" elements="444" coveredelements="401"/>
+    <metrics files="48" loc="4620" ncloc="4603" classes="44" methods="129" coveredmethods="119" conditionals="0" coveredconditionals="0" statements="317" coveredstatements="282" elements="446" coveredelements="401"/>
   </project>
 </coverage>
