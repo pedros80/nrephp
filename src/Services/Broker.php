@@ -12,43 +12,49 @@ use Stomp\Transport\Frame;
 
 abstract class Broker
 {
-    private StatefulStomp $client;
+    private StatefulStomp $stomp;
+    private Client $client;
 
     public function __construct(string $host, int $port, string $user, string $pass, array $topics)
     {
-        $connection = new Connection("tcp://{$host}:{$port}");
-        $client     = new Client($connection);
-        $client->setLogin($user, $pass);
-        $client->setClientId($user);
+        $connection   = new Connection("tcp://{$host}:{$port}");
+        $this->client = new Client($connection);
+        $this->client->setLogin($user, $pass);
+        $this->client->setClientId($user);
         // Once we've created the Stomp connection and client, we will add a heartbeat
         // to periodically let ActiveMQ know our connection is alive and healthy.
-        $client->setHeartbeat(500);
+        $this->client->setHeartbeat(15000, 15000);
         $connection->setReadTimeout(0, 250000);
         // We add a HeartBeatEmitter and attach it to the connection to automatically send these signals.
-        $emitter = new HeartbeatEmitter($client->getConnection());
-        $client->getConnection()->getObservers()->addObserver($emitter);
+        $emitter = new HeartbeatEmitter($this->client->getConnection());
+        $this->client->getConnection()->getObservers()->addObserver($emitter);
         // Lastly, we create our internal Stomp client which will be used in our methods to interact with ActiveMQ.
-        $this->client = new StatefulStomp($client);
-        $client->connect();
+        $this->stomp = new StatefulStomp($this->client);
+        $this->client->connect();
 
         foreach ($topics as $topic) {
             $subName = "{$user}-{$topic}";
-            $this->client->subscribe("/topic/{$topic}", null, 'client-individual', ['activemq.subscriptionName' => $subName]);
+            $this->stomp->subscribe("/topic/{$topic}", null, 'client-individual', ['activemq.subscriptionName' => $subName]);
         }
     }
 
     public function read(): ?Frame
     {
-        return ($frame = $this->client->read()) ? $frame : null;
+        return ($frame = $this->stomp->read()) ? $frame : null;
     }
 
     public function ack(Frame $message): void
     {
-        $this->client->ack($message);
+        $this->stomp->ack($message);
     }
 
     public function nack(Frame $message): void
     {
-        $this->client->nack($message);
+        $this->stomp->nack($message);
+    }
+
+    public function disconnect(): void
+    {
+        $this->client->disconnect();
     }
 }

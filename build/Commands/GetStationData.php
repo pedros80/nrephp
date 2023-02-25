@@ -22,7 +22,7 @@ final class GetStationData extends Command
     private string $token;
     private bool $dry;
 
-    private string $filename = "stations.xml.gz";
+    private string $filename = 'stations.xml.gz';
 
     private Writer $writer;
     private KnowledgeBase $kb;
