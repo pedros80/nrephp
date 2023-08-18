@@ -39,7 +39,7 @@ final class Parser implements BuildParser
             $code = (string) $element->CrsCode;
             $name = (string) $element->Name;
 
-            $codes[$code] = $name;
+            $codes[$code] = trim($name);
             $xml->next(self::ELEMENT);
             unset($element);
         }
