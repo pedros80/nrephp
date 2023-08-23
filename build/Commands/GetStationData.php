@@ -52,7 +52,7 @@ final class GetStationData extends Command
     private function writeStationsFile(): bool
     {
         $data = $this->kb->stations($this->token);
-        $data = gzencode($data);
+        $data = (string) gzencode($data);
 
         return $this->writer->write($this->filename, $data);
     }
