@@ -5,10 +5,11 @@ declare(strict_types=1);
 namespace Pedros80\NREphp\Services;
 
 use GuzzleHttp\Client;
+use Pedros80\NREphp\Contracts\Tokens;
 use Pedros80\NREphp\Exceptions\CouldNotGenerateToken;
 use Throwable;
 
-final class TokenGenerator
+final class TokenGenerator implements Tokens
 {
     public function __construct(
         private Client $client,
