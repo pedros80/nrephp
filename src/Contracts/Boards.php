@@ -4,7 +4,7 @@ namespace Pedros80\NREphp\Contracts;
 
 use stdClass;
 
-interface Board
+interface Boards
 {
     public function getArrBoardWithDetails(
         int $numRows,

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Pedros80\NREphp\Services;
 
-use Pedros80\NREphp\Contracts\Board;
+use Pedros80\NREphp\Contracts\Boards;
 use Pedros80\NREphp\Exceptions\LiveDepartureBoard\LiveDepartureBoardException;
 use Pedros80\NREphp\Params\LiveDepartureBoard\FilterList;
 use Pedros80\NREphp\Params\LiveDepartureBoard\NumRows;
@@ -13,7 +13,7 @@ use SoapClient;
 use SoapFault;
 use stdClass;
 
-final class LiveDepartureBoard implements Board
+final class LiveDepartureBoard implements Boards
 {
     public function __construct(
         private SoapClient $client,
