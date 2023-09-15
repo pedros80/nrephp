@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1693525546">
-  <project timestamp="1693525546">
-    <file name="/home/runner/work/nrephp/nrephp/src/Contracts/Board.php">
+<coverage generated="1693525743">
+  <project timestamp="1693525743">
+    <file name="/home/runner/work/nrephp/nrephp/src/Contracts/Boards.php">
       <metrics loc="93" ncloc="93" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/Contracts/Tokens.php">
