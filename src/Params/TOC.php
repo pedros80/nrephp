@@ -245,8 +245,9 @@ final class TOC
         ['code' => 'ZZ', 'name' => 'Freight and miscellaneous operators', 'date' => 'online system code only'],
     ];
 
-    public function __construct(private string $code)
-    {
+    public function __construct(
+        private string $code,
+    ) {
         if (!in_array($code, array_unique(array_column(self::CODES, 'code')))) {
             throw InvalidTOC::fromCode($code);
         }

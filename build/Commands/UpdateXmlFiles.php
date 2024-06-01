@@ -36,6 +36,11 @@ final class UpdateXmlFiles extends Command
         'stations',
     ];
 
+    public function __construct()
+    {
+        parent::__construct('build:updateXmlFiles');
+    }
+
     public function configure(): void
     {
         $this->addArgument('token', InputArgument::REQUIRED, 'Your token');

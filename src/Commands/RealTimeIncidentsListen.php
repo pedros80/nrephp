@@ -17,6 +17,11 @@ class RealTimeIncidentsListen extends Command
     protected static $defaultName        = 'kb:realTimeIncidentsListen';
     protected static $defaultDescription = 'Listen to Knowledge Base Real Time Inciddents topic';
 
+    public function __construct()
+    {
+        parent::__construct('kb:realTimeIncidentsListen');
+    }
+
     protected function configure(): void
     {
         $this->addArgument('username', InputArgument::REQUIRED, 'The KB Real Time Topic username');

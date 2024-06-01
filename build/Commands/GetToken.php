@@ -16,6 +16,11 @@ final class GetToken extends Command
 
     protected static $defaultDescription = 'Generate a new access token from user/pass credentials';
 
+    public function __construct()
+    {
+        parent::__construct('build:getToken');
+    }
+
     public function execute(InputInterface $input, OutputInterface $output): int
     {
         [$user, $pass] = $this->parseArguments($input);

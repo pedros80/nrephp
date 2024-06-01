@@ -113,6 +113,7 @@ final class StationCode
         'AFS' => 'Ashford (Surrey)',
         'AFK' => 'Ashford International',
         'ASY' => 'Ashley',
+        'ASD' => 'Ashley Down',
         'AHD' => 'Ashtead',
         'AHN' => 'Ashton-under-Lyne',
         'AHS' => 'Ashurst (Kent)',
@@ -261,7 +262,7 @@ final class StationCode
         'BIN' => 'Bingham',
         'BIY' => 'Bingley',
         'BCG' => 'Birchgrove',
-        'BCH' => 'Birchington-on-sea',
+        'BCH' => 'Birchington-on-Sea',
         'BWD' => 'Birchwood',
         'BIK' => 'Birkbeck',
         'BDL' => 'Birkdale',
@@ -2501,6 +2502,7 @@ final class StationCode
         'WTC' => 'Whitchurch (Shropshire)',
         'WHL' => 'White Hart Lane',
         'WNY' => 'White Notley',
+        'WRO' => 'White Rose',
         'ZLW' => 'Whitechapel',
         'WCR' => 'Whitecraigs',
         'WTH' => 'Whitehaven',
@@ -2610,8 +2612,9 @@ final class StationCode
         '???' => 'Unknown',
     ];
 
-    public function __construct(private string $code)
-    {
+    public function __construct(
+        private string $code,
+    ) {
         if (!in_array($code, array_keys(self::STATIONS))) {
             throw InvalidStationCode::fromCode($code);
         }

@@ -17,6 +17,11 @@ final class BuildClasses extends Command
 
     protected static $defaultDescription = 'Generate and write to file any classes to be built';
 
+    public function __construct()
+    {
+        parent::__construct('build:classes');
+    }
+
     public function configure(): void
     {
         $this->addOption('dry-run');

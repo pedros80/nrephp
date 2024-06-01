@@ -17,6 +17,11 @@ class PushPortListen extends Command
     protected static $defaultName        = 'darwin:pushPortListen';
     protected static $defaultDescription = 'Listen to Darwin PushPort topic';
 
+    public function __construct()
+    {
+        parent::__construct('darwin:pushPortListen');
+    }
+
     protected function configure(): void
     {
         $this->addArgument('username', InputArgument::REQUIRED, 'The Darwin Topic username');

@@ -32,6 +32,11 @@ final class UpdateZipFiles extends Command
         'timetable',
     ];
 
+    public function __construct()
+    {
+        parent::__construct('build:updateZipFiles');
+    }
+
     public function configure(): void
     {
         $this->addArgument('token', InputArgument::REQUIRED, 'Your token');

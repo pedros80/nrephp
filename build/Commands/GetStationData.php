@@ -27,6 +27,11 @@ final class GetStationData extends Command
     private Writer $writer;
     private KnowledgeBase $kb;
 
+    public function __construct()
+    {
+        parent::__construct('build:getStationData');
+    }
+
     public function configure(): void
     {
         $this->addArgument('token', InputArgument::REQUIRED, 'Your token');
