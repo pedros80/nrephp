@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1694818985">
-  <project timestamp="1694818985">
+<coverage generated="1717280282">
+  <project timestamp="1717280282">
     <file name="/home/runner/work/nrephp/nrephp/src/Contracts/Boards.php">
       <metrics loc="93" ncloc="93" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
@@ -525,29 +525,29 @@
       <class name="Pedros80\NREphp\Params\StationCode" namespace="global">
         <metrics complexity="6" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="11" coveredelements="11"/>
       </class>
-      <line num="2613" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="21"/>
-      <line num="2615" type="stmt" count="21"/>
-      <line num="2616" type="stmt" count="2"/>
-      <line num="2620" type="method" name="name" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="2622" type="stmt" count="2"/>
-      <line num="2625" type="method" name="__toString" visibility="public" complexity="1" crap="1" count="18"/>
-      <line num="2627" type="stmt" count="18"/>
-      <line num="2630" type="method" name="random" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="2632" type="stmt" count="1"/>
-      <line num="2635" type="method" name="list" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="2637" type="stmt" count="1"/>
-      <metrics loc="2640" ncloc="2636" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="11" coveredelements="11"/>
+      <line num="2615" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="21"/>
+      <line num="2618" type="stmt" count="21"/>
+      <line num="2619" type="stmt" count="2"/>
+      <line num="2623" type="method" name="name" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="2625" type="stmt" count="2"/>
+      <line num="2628" type="method" name="__toString" visibility="public" complexity="1" crap="1" count="18"/>
+      <line num="2630" type="stmt" count="18"/>
+      <line num="2633" type="method" name="random" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="2635" type="stmt" count="1"/>
+      <line num="2638" type="method" name="list" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="2640" type="stmt" count="1"/>
+      <metrics loc="2643" ncloc="2639" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="11" coveredelements="11"/>
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/Params/TOC.php">
       <class name="Pedros80\NREphp\Params\TOC" namespace="global">
         <metrics complexity="3" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
       </class>
       <line num="248" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="5"/>
-      <line num="250" type="stmt" count="5"/>
-      <line num="251" type="stmt" count="1"/>
-      <line num="255" type="method" name="__toString" visibility="public" complexity="1" crap="1" count="4"/>
-      <line num="257" type="stmt" count="4"/>
-      <metrics loc="260" ncloc="256" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
+      <line num="251" type="stmt" count="5"/>
+      <line num="252" type="stmt" count="1"/>
+      <line num="256" type="method" name="__toString" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="258" type="stmt" count="4"/>
+      <metrics loc="261" ncloc="257" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
     </file>
     <file name="/home/runner/work/nrephp/nrephp/src/Services/Broker.php">
       <class name="Pedros80\NREphp\Services\Broker" namespace="global">
@@ -815,6 +815,6 @@
       <line num="48" type="stmt" count="1"/>
       <metrics loc="51" ncloc="51" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="21" coveredelements="21"/>
     </file>
-    <metrics files="50" loc="4729" ncloc="4712" classes="44" methods="130" coveredmethods="119" conditionals="0" coveredconditionals="0" statements="390" coveredstatements="354" elements="520" coveredelements="473"/>
+    <metrics files="50" loc="4733" ncloc="4716" classes="44" methods="130" coveredmethods="119" conditionals="0" coveredconditionals="0" statements="390" coveredstatements="354" elements="520" coveredelements="473"/>
   </project>
 </coverage>
