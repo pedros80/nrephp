@@ -14,8 +14,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class PushPortListen extends Command
 {
-    protected static $defaultName        = 'darwin:pushPortListen';
-    protected static $defaultDescription = 'Listen to Darwin PushPort topic';
+    protected static string $defaultName        = 'darwin:pushPortListen';
+    protected static string $defaultDescription = 'Listen to Darwin PushPort topic';
 
     public function __construct()
     {

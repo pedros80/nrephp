@@ -7,21 +7,15 @@
             "email": "peterwsomerville@gmail.com"
         }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/pedros80/stomp-php.git"
-        }
-    ],
     "require": {
-        "php": "^8.3",
+        "php": "^8.4",
         "aws/aws-sdk-php": "^3.242",
-        "guzzlehttp/guzzle": "^7.5",
+        "guzzlehttp/guzzle": "^7.7",
         "league/flysystem": "^3.10",
         "league/flysystem-aws-s3-v3": "^3.10",
         "league/flysystem-ftp": "^3.4",
-        "stomp-php/stomp-php": "dev-php8.1",
-        "symfony/console": "^7.0"
+        "stomp-php/stomp-php": "^5.1",
+        "symfony/console": "^7"
     },
     "autoload": {
         "psr-4": {
@@ -45,12 +39,12 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.12",
-        "jangregor/phpstan-prophecy": "^1.0",
+        "friendsofphp/php-cs-fixer": "^3.60",
+        "jangregor/phpstan-prophecy": "^2.0",
         "league/flysystem-memory": "^3.10",
-        "nette/php-generator": "^4.0",
+        "nette/php-generator": "^4.1",
         "phpspec/prophecy-phpunit": "^2.0",
-        "phpstan/phpstan": "^1.8",
-        "phpunit/phpunit": "^9.5"
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^11.0"
     }
 }

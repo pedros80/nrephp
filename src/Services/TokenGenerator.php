@@ -14,7 +14,7 @@ final class TokenGenerator implements Tokens
     public function __construct(
         private Client $client,
         private string $user,
-        private string $pass
+        private string $pass,
     ) {
     }
 

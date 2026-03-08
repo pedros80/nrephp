@@ -9,128 +9,129 @@ use GuzzleHttp\Psr7\Response;
 use Pedros80\NREphp\Services\KnowledgeBase;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
+use Prophecy\Prophecy\ObjectProphecy;
 
 final class KnowledgeBaseTest extends TestCase
 {
     use ProphecyTrait;
 
-    public function testKnowledgeBaseCanBeInstantiated(): void
-    {
-        $client = $this->prophesize(Client::class);
-        $kb     = new KnowledgeBase($client->reveal());
+    /** @var ObjectProphecy<Client> */
+    private ObjectProphecy $client;
 
-        $this->assertInstanceOf(KnowledgeBase::class, $kb);
+    public function setUp(): void
+    {
+        parent::setUp();
+
+        $this->client = $this->prophesize(Client::class);
     }
 
     public function testServiceIndicatorsReturnsAString(): void
     {
-        $client = $this->prophesize(Client::class);
-        $kb     = new KnowledgeBase($client->reveal());
+        $kb = $this->makeKnowledgeBase();
 
-        $client->get('4.0/serviceIndicators', [
+        $this->client->get('4.0/serviceIndicators', [
             'headers' => [
                 'X-Auth-Token' => 'token',
             ]
-        ])->willReturn(new Response(200, [], '<some><xml></xml></some>'));
+        ])->willReturn(
+            new Response(200, [], '<some><xml></xml></some>')
+        )->shouldBeCalled();
 
-        $result = $kb->serviceIndicators('token');
-
-        $this->assertIsString($result);
+        $kb->serviceIndicators('token');
     }
 
     public function testIncidentsReturnsAString(): void
     {
-        $client = $this->prophesize(Client::class);
-        $kb     = new KnowledgeBase($client->reveal());
+        $kb = $this->makeKnowledgeBase();
 
-        $client->get('5.0/incidents', [
+        $this->client->get('5.0/incidents', [
             'headers' => [
                 'X-Auth-Token' => 'token',
             ]
-        ])->willReturn(new Response(200, [], '<some><xml></xml></some>'));
+        ])->willReturn(
+            new Response(200, [], '<some><xml></xml></some>')
+        )->shouldBeCalled();
 
-        $result = $kb->incidents('token');
-
-        $this->assertIsString($result);
+        $kb->incidents('token');
     }
 
     public function testTocsReturnsAString(): void
     {
-        $client = $this->prophesize(Client::class);
-        $kb     = new KnowledgeBase($client->reveal());
+        $kb = $this->makeKnowledgeBase();
 
-        $client->get('4.0/tocs', [
+        $this->client->get('4.0/tocs', [
             'headers' => [
                 'X-Auth-Token' => 'token',
             ]
-        ])->willReturn(new Response(200, [], '<some><xml></xml></some>'));
+        ])->willReturn(
+            new Response(200, [], '<some><xml></xml></some>')
+        )->shouldBeCalled();
 
-        $result = $kb->tocs('token');
-
-        $this->assertIsString($result);
+        $kb->tocs('token');
     }
 
     public function testTicketRestrictionsReturnsAString(): void
     {
-        $client = $this->prophesize(Client::class);
-        $kb     = new KnowledgeBase($client->reveal());
+        $kb = $this->makeKnowledgeBase();
 
-        $client->get('4.0/ticket-restrictions', [
+        $this->client->get('4.0/ticket-restrictions', [
             'headers' => [
                 'X-Auth-Token' => 'token',
             ]
-        ])->willReturn(new Response(200, [], '<some><xml></xml></some>'));
+        ])->willReturn(
+            new Response(200, [], '<some><xml></xml></some>')
+        )->shouldBeCalled();
 
-        $result = $kb->ticketRestrictions('token');
-
-        $this->assertIsString($result);
+        $kb->ticketRestrictions('token');
     }
 
     public function testTicketTypesReturnsAString(): void
     {
-        $client = $this->prophesize(Client::class);
-        $kb     = new KnowledgeBase($client->reveal());
+        $kb = $this->makeKnowledgeBase();
 
-        $client->get('4.0/ticket-types', [
+        $this->client->get('4.0/ticket-types', [
             'headers' => [
                 'X-Auth-Token' => 'token',
             ]
-        ])->willReturn(new Response(200, [], '<some><xml></xml></some>'));
+        ])->willReturn(
+            new Response(200, [], '<some><xml></xml></some>')
+        )->shouldBeCalled();
 
-        $result = $kb->ticketTypes('token');
-
-        $this->assertIsString($result);
+        $kb->ticketTypes('token');
     }
 
     public function testPublicPromotionsReturnsAString(): void
     {
-        $client = $this->prophesize(Client::class);
-        $kb     = new KnowledgeBase($client->reveal());
+        $kb = $this->makeKnowledgeBase();
 
-        $client->get('4.0/promotions-publics', [
+        $this->client->get('4.0/promotions-publics', [
             'headers' => [
                 'X-Auth-Token' => 'token',
             ]
-        ])->willReturn(new Response(200, [], '<some><xml></xml></some>'));
+        ])->willReturn(
+            new Response(200, [], '<some><xml></xml></some>')
+        )->shouldBeCalled();
 
-        $result = $kb->publicPromotions('token');
-
-        $this->assertIsString($result);
+        $kb->publicPromotions('token');
     }
 
     public function testStationsReturnsAString(): void
     {
-        $client = $this->prophesize(Client::class);
-        $kb     = new KnowledgeBase($client->reveal());
+        $kb = $this->makeKnowledgeBase();
 
-        $client->get('4.0/stations', [
+        $this->client->get('4.0/stations', [
             'headers' => [
                 'X-Auth-Token' => 'token',
             ]
-        ])->willReturn(new Response(200, [], '<some><xml></xml></some>'));
+        ])->willReturn(
+            new Response(200, [], '<some><xml></xml></some>')
+        )->shouldBeCalled();
 
-        $result = $kb->stations('token');
+        $kb->stations('token');
+    }
 
-        $this->assertIsString($result);
+    private function makeKnowledgeBase(): KnowledgeBase
+    {
+        return new KnowledgeBase($this->client->reveal());
     }
 }

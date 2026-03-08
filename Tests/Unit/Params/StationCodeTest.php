@@ -47,6 +47,17 @@ final class StationCodeTest extends TestCase
     {
         $stations = StationCode::list();
 
-        $this->assertIsArray($stations);
+        foreach ($stations as $code => $station) {
+            if ($code === '???') {
+                continue;
+            }
+
+            $this->assertStringIsValidCRSCode($code);
+        }
+    }
+
+    private function assertStringIsValidCRSCode(string $code): void
+    {
+        $this->assertMatchesRegularExpression('/^[A-Z]{3}$/', $code);
     }
 }

@@ -15,9 +15,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 final class UpdateZipFiles extends Command
 {
-    protected static $defaultName = 'build:updateZipFiles';
+    protected static string $defaultName = 'build:updateZipFiles';
 
-    protected static $defaultDescription = 'Grab all the zip files';
+    protected static string $defaultDescription = 'Grab all the zip files';
 
     private string $token;
     private ?string $single;

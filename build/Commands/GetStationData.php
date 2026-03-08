@@ -15,9 +15,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 final class GetStationData extends Command
 {
-    protected static $defaultName = 'build:getStationData';
+    protected static string $defaultName = 'build:getStationData';
 
-    protected static $defaultDescription = 'Get the current data on Stations';
+    protected static string $defaultDescription = 'Get the current data on Stations';
 
     private string $token;
     private bool $dry;

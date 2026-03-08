@@ -33,7 +33,7 @@ final class HistoricalDateTimeTest extends TestCase
         HistoricalDateTime::fromString("{$date} {$time}");
     }
 
-    public function provideValid(): array
+    public static function provideValid(): array
     {
         return [
             ['2000-01-01', '09:00:00', '0900'],
@@ -42,7 +42,7 @@ final class HistoricalDateTimeTest extends TestCase
         ];
     }
 
-    public function provideInvalidTimes(): array
+    public static function provideInvalidTimes(): array
     {
         return [
             ['yesterday', 'nine of the clock'],

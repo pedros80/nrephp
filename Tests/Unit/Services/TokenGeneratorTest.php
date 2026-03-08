@@ -39,7 +39,6 @@ final class TokenGeneratorTest extends TestCase
         $tg    = new TokenGenerator($client->reveal(), 'username', 'password');
         $token = $tg->get();
 
-        $this->assertIsArray($token);
         $this->assertEquals('username:1668153791000:access_token', $token['token']);
         $this->assertEquals('username', $token['user']);
         $this->assertEquals(date('Y-m-d H:i:s', 1668153791000 / 1000), $token['expires']);
