@@ -14,8 +14,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class RealTimeIncidentsListen extends Command
 {
-    protected static $defaultName        = 'kb:realTimeIncidentsListen';
-    protected static $defaultDescription = 'Listen to Knowledge Base Real Time Inciddents topic';
+    protected static string $defaultName        = 'kb:realTimeIncidentsListen';
+    protected static string $defaultDescription = 'Listen to Knowledge Base Real Time Inciddents topic';
 
     public function __construct()
     {

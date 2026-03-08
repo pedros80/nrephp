@@ -15,9 +15,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 final class UpdateXmlFiles extends Command
 {
-    protected static $defaultName = 'build:updateXmlFiles';
+    protected static string $defaultName = 'build:updateXmlFiles';
 
-    protected static $defaultDescription = 'Grab all the xml feeds and write to files';
+    protected static string $defaultDescription = 'Grab all the xml feeds and write to files';
 
     private string $token;
     private ?string $single;

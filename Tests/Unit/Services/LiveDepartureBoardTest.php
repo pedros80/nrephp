@@ -40,6 +40,7 @@ final class LiveDepartureBoardTest extends TestCase
                     if ($arguments[0]['serviceID'] === 'INVALID') {
                         throw new SoapFault('Server', 'Invalid Service ID', $method);
                     }
+
                     return json_decode('{"GetServiceDetailsResult":{"generatedAt":"2022-11-05T09:17:25.6875364+00:00","serviceType":"train","locationName":"Dalmeny","crs":"DAM","operator":"ScotRail","operatorCode":"SR","rsid":"SR454400","platform":"2","sta":"09:17","ata":"On time","std":"09:17","etd":"On time","previousCallingPoints":{"callingPointList":[{"callingPoint":[{"locationName":"Edinburgh","crs":"EDB","st":"09:00","at":"On time"},{"locationName":"Haymarket","crs":"HYM","st":"09:04","at":"On time"},{"locationName":"South Gyle","crs":"SGL","st":"09:09","at":"On time"},{"locationName":"Edinburgh Gateway","crs":"EGY","st":"09:11","at":"On time"}],"serviceType":"train","serviceChangeRequired":false,"assocIsCancelled":false}]},"subsequentCallingPoints":{"callingPointList":[{"callingPoint":[{"locationName":"North Queensferry","crs":"NQU","st":"09:20","et":"On time"},{"locationName":"Inverkeithing","crs":"INK","st":"09:24","et":"On time"},{"locationName":"Rosyth","crs":"ROS","st":"09:28","et":"On time"},{"locationName":"Dunfermline Town","crs":"DFE","st":"09:33","et":"On time"},{"locationName":"Dunfermline Queen Margaret","crs":"DFL","st":"09:37","et":"On time"},{"locationName":"Cowdenbeath","crs":"COW","st":"09:43","et":"On time"}],"serviceType":"train","serviceChangeRequired":false,"assocIsCancelled":false}]}}}');
             }
 
@@ -52,62 +53,107 @@ final class LiveDepartureBoardTest extends TestCase
 
     public function testGetDepartureBoardReturnsObject(): void
     {
-        $this->assertIsObject($this->ldb->getDepartureBoard(1, 'DAM'));
+        $result = $this->ldb->getDepartureBoard(1, 'DAM');
+
+        $this->assertSame('Dalmeny', $result->GetStationBoardResult->locationName);
+        $this->assertSame('DAM', $result->GetStationBoardResult->crs);
+        $this->assertSame('ScotRail', $result->GetStationBoardResult->trainServices->service[0]->operator);
     }
 
     public function testGetArrivalBoardReturnsObject(): void
     {
-        $this->assertIsObject($this->ldb->getArrivalBoard(1, 'DAM'));
+        $result = $this->ldb->getArrivalBoard(1, 'DAM');
+
+        $this->assertSame('Dalmeny', $result->GetStationBoardResult->locationName);
+        $this->assertSame('DAM', $result->GetStationBoardResult->crs);
+        $this->assertSame('ScotRail', $result->GetStationBoardResult->trainServices->service[0]->operator);
     }
 
     public function testGetArrivalDepartureBoardReturnsObject(): void
     {
-        $this->assertIsObject($this->ldb->getArrivalDepartureBoard(1, 'DAM'));
+        $result = $this->ldb->getArrivalDepartureBoard(1, 'DAM');
+
+        $this->assertSame('Dalmeny', $result->GetStationBoardResult->locationName);
+        $this->assertSame('DAM', $result->GetStationBoardResult->crs);
+        $this->assertSame('ScotRail', $result->GetStationBoardResult->trainServices->service[0]->operator);
     }
 
     public function testGetArrBoardWithDetailsReturnsObject(): void
     {
-        $this->assertIsObject($this->ldb->getArrBoardWithDetails(1, 'DAM'));
+        $result = $this->ldb->getArrBoardWithDetails(1, 'DAM');
+
+        $this->assertSame('Dalmeny', $result->GetStationBoardResult->locationName);
+        $this->assertSame('DAM', $result->GetStationBoardResult->crs);
+        $this->assertSame('Cowdenbeath', $result->GetStationBoardResult->trainServices->service[0]->previousCallingPoints->callingPointList[0]->callingPoint[0]->locationName);
     }
 
     public function testGetArrDepBoardWithDetailsReturnsObject(): void
     {
-        $this->assertIsObject($this->ldb->getArrDepBoardWithDetails(1, 'DAM'));
+        $result = $this->ldb->getArrDepBoardWithDetails(1, 'DAM');
+
+        $this->assertSame('Dalmeny', $result->GetStationBoardResult->locationName);
+        $this->assertSame('DAM', $result->GetStationBoardResult->crs);
+        $this->assertSame('Cowdenbeath', $result->GetStationBoardResult->trainServices->service[0]->previousCallingPoints->callingPointList[0]->callingPoint[0]->locationName);
     }
 
     public function testGetDepBoardWithDetailsReturnsObject(): void
     {
-        $this->assertIsObject($this->ldb->getDepBoardWithDetails(1, 'DAM'));
+        $result = $this->ldb->getDepBoardWithDetails(1, 'DAM');
+
+        $this->assertSame('Dalmeny', $result->GetStationBoardResult->locationName);
+        $this->assertSame('DAM', $result->GetStationBoardResult->crs);
+        $this->assertSame('Cowdenbeath', $result->GetStationBoardResult->trainServices->service[0]->previousCallingPoints->callingPointList[0]->callingPoint[0]->locationName);
     }
 
     public function testGetFastestDeparturesReturnsObject(): void
     {
-        $this->assertIsObject($this->ldb->getFastestDepartures('DAM', ['INK', 'DEE']));
+        $result = $this->ldb->getFastestDepartures('DAM', ['INK', 'DEE']);
+
+        $this->assertSame('Dalmeny', $result->DeparturesBoard->locationName);
+        $this->assertSame('DAM', $result->DeparturesBoard->crs);
+        $this->assertSame('INK', $result->DeparturesBoard->departures->destination[0]->crs);
     }
 
     public function testGetFastestDeparturesWithDetailsReturnsObject(): void
     {
-        $this->assertIsObject($this->ldb->getFastestDeparturesWithDetails('DAM', ['INK', 'DEE']));
+        $result = $this->ldb->getFastestDeparturesWithDetails('DAM', ['INK', 'DEE']);
+
+        $this->assertSame('Dalmeny', $result->DeparturesBoard->locationName);
+        $this->assertSame('DAM', $result->DeparturesBoard->crs);
+        $this->assertSame('North Queensferry', $result->DeparturesBoard->departures->destination[0]->service->subsequentCallingPoints->callingPointList[0]->callingPoint[0]->locationName);
     }
 
     public function testGetNextDeparturesReturnsObject(): void
     {
-        $this->assertIsObject($this->ldb->getNextDepartures('DAM', ['INK', 'DEE']));
+        $result = $this->ldb->getNextDepartures('DAM', ['INK', 'DEE']);
+
+        $this->assertSame('Dalmeny', $result->DeparturesBoard->locationName);
+        $this->assertSame('DAM', $result->DeparturesBoard->crs);
+        $this->assertSame('INK', $result->DeparturesBoard->departures->destination[0]->crs);
     }
 
     public function testGetNextDeparturesWithDetailsReturnsObject(): void
     {
-        $this->assertIsObject($this->ldb->getNextDeparturesWithDetails('DAM', ['INK', 'DEE']));
+        $result = $this->ldb->getNextDeparturesWithDetails('DAM', ['INK', 'DEE']);
+
+        $this->assertSame('Dalmeny', $result->DeparturesBoard->locationName);
+        $this->assertSame('DAM', $result->DeparturesBoard->crs);
+        $this->assertSame('North Queensferry', $result->DeparturesBoard->departures->destination[0]->service->subsequentCallingPoints->callingPointList[0]->callingPoint[0]->locationName);
     }
 
     public function testGetServiceDetailsReturnsObject(): void
     {
-        $this->assertIsObject($this->ldb->getServiceDetails('mzCXFZ9LoeqyY0veTB6FfA=='));
+        $result = $this->ldb->getServiceDetails('mzCXFZ9LoeqyY0veTB6FfA==');
+
+        $this->assertSame('Dalmeny', $result->GetServiceDetailsResult->locationName);
+        $this->assertSame('ScotRail', $result->GetServiceDetailsResult->operator);
+        $this->assertSame('North Queensferry', $result->GetServiceDetailsResult->subsequentCallingPoints->callingPointList[0]->callingPoint[0]->locationName);
     }
 
     public function testLiveDepartureBoardCanThrowException(): void
     {
         $this->expectException(LiveDepartureBoardException::class);
-        $this->assertIsObject($this->ldb->getServiceDetails('INVALID'));
+
+        $this->ldb->getServiceDetails('INVALID');
     }
 }

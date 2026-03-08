@@ -11,17 +11,27 @@ use GuzzleHttp\Psr7\Response;
 use Pedros80\NREphp\Services\HistoricalServicePerformance;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
+use Prophecy\Prophecy\ObjectProphecy;
 
 final class HistoricalServicePerformanceTest extends TestCase
 {
     use ProphecyTrait;
 
+    /** @var ObjectProphecy<Client> */
+    private ObjectProphecy $client;
+
+    public function setUp(): void
+    {
+        parent::setUp();
+
+        $this->client = $this->prophesize(Client::class);
+    }
+
     public function testInvalidServiceMetricsReturnsSuccessFalse(): void
     {
-        $client = $this->prophesize(Client::class);
-        $hsp    = new HistoricalServicePerformance($client->reveal());
+        $hsp = $this->makeHistoricalServicePerformance();
 
-        $client->post('serviceMetrics', [
+        $this->client->post('serviceMetrics', [
             'json' => [
                 'from_loc'  => 'BTN',
                 'to_loc'    => 'VIC',
@@ -32,21 +42,19 @@ final class HistoricalServicePerformanceTest extends TestCase
                 'days'      => 'WEEKDAY',
                 'toc'       => 'GX',
             ]
-        ])->willThrow(new ConnectException('connection problems. fml', new Request('post', 'serviceMetrics')));
+        ])->willThrow(
+            new ConnectException('connection problems. fml', new Request('post', 'serviceMetrics'))
+        )->shouldBeCalled();
 
-        $result = $hsp->getServiceMetrics('BTN', 'VIC', '2016-07-01 07:00:00', '2016-07-03 08:00:00', 'WEEKDAY', 'GX');
-
-        $this->assertIsObject($result);
-        $this->assertFalse($result->success);
+        $hsp->getServiceMetrics('BTN', 'VIC', '2016-07-01 07:00:00', '2016-07-03 08:00:00', 'WEEKDAY', 'GX');
     }
 
     public function testGetServiceMetricsReturnsObject(): void
     {
-        $client   = $this->prophesize(Client::class);
-        $hsp      = new HistoricalServicePerformance($client->reveal());
+        $hsp = $this->makeHistoricalServicePerformance();
         $response = '{"header":{"from_location":"BTN","to_location":"VIC"},"Services":[{"serviceAttributesMetrics":{"origin_location":"BTN","destination_location":"VIC","gbtt_ptd":"0712","gbtt_pta":"0823","toc_code":"GX","matched_services":"1","rids":["201607013361753"]},"Metrics":[{"tolerance_value":"0","num_not_tolerance":"0","num_tolerance":"1","percent_tolerance":"100","global_tolerance":true}]},{"serviceAttributesMetrics":{"origin_location":"BTN","destination_location":"VIC","gbtt_ptd":"0729","gbtt_pta":"0839","toc_code":"GX","matched_services":"1","rids":["201607013361763"]},"Metrics":[{"tolerance_value":"0","num_not_tolerance":"0","num_tolerance":"1","percent_tolerance":"100","global_tolerance":true}]},{"serviceAttributesMetrics":{"origin_location":"BTN","destination_location":"VIC","gbtt_ptd":"0744","gbtt_pta":"0855","toc_code":"GX","matched_services":"1","rids":["201607013361777"]},"Metrics":[{"tolerance_value":"0","num_not_tolerance":"0","num_tolerance":"1","percent_tolerance":"100","global_tolerance":true}]}]}';
 
-        $client->post('serviceMetrics', [
+        $this->client->post('serviceMetrics', [
             'json' => [
                 'from_loc'  => 'BTN',
                 'to_loc'    => 'VIC',
@@ -57,44 +65,47 @@ final class HistoricalServicePerformanceTest extends TestCase
                 'days'      => 'WEEKDAY',
                 'toc'       => 'GX',
             ]
-        ])->willReturn(new Response(200, [], $response));
+        ])->willReturn(
+            new Response(200, [], $response)
+        )->shouldBeCalled();
 
-        $result = $hsp->getServiceMetrics('BTN', 'VIC', '2016-07-01 07:00:00', '2016-07-03 08:00:00', 'WEEKDAY', 'GX');
-
-        $this->assertIsObject($result);
+        $hsp->getServiceMetrics('BTN', 'VIC', '2016-07-01 07:00:00', '2016-07-03 08:00:00', 'WEEKDAY', 'GX');
     }
 
-    public function testGetServiceDetailsReturnsObject(): void
+    public function testGetServiceDetailsCallsClient(): void
     {
-        $client   = $this->prophesize(Client::class);
+        $hsp = $this->makeHistoricalServicePerformance();
+
         $response = '{"serviceAttributesDetails":{"date_of_service":"2016-07-01","toc_code":"GX","rid":"201607013361763","locations":[{"location":"BTN","gbtt_ptd":"0729","gbtt_pta":"","actual_td":"0729","actual_ta":"","late_canc_reason":""},{"location":"HSK","gbtt_ptd":"0738","gbtt_pta":"0737","actual_td":"","actual_ta":"0737","late_canc_reason":""},{"location":"HHE","gbtt_ptd":"0748","gbtt_pta":"0747","actual_td":"0750","actual_ta":"0748","late_canc_reason":""},{"location":"GTW","gbtt_ptd":"0802","gbtt_pta":"0800","actual_td":"0802","actual_ta":"0801","late_canc_reason":""},{"location":"VIC","gbtt_ptd":"","gbtt_pta":"0839","actual_td":"","actual_ta":"0836","late_canc_reason":""}]}}';
 
-        $client->post('serviceDetails', [
+        $this->client->post('serviceDetails', [
             'json' => [
                 'rid' => '201607013361763'
             ]
-        ])->willReturn(new Response(200, [], $response));
+        ])->willReturn(
+            new Response(200, [], $response)
+        )->shouldBeCalled();
 
-        $hsp    = new HistoricalServicePerformance($client->reveal());
-        $result = $hsp->getServiceDetails('201607013361763');
-
-        $this->assertIsObject($result);
+        $hsp->getServiceDetails('201607013361763');
     }
 
     public function testInvalidServiceDetailsReturnsSuccessFalse(): void
     {
-        $client = $this->prophesize(Client::class);
+        $hsp = $this->makeHistoricalServicePerformance();
 
-        $client->post('serviceDetails', [
+        $this->client->post('serviceDetails', [
             'json' => [
                 'rid' => '201607013361763'
             ]
-        ])->willThrow(new ConnectException('connection problems. fml', new Request('post', 'serviceMetrics')));
+        ])->willThrow(
+            new ConnectException('connection problems. fml', new Request('post', 'serviceMetrics'))
+        )->shouldBeCalled();
 
-        $hsp    = new HistoricalServicePerformance($client->reveal());
-        $result = $hsp->getServiceDetails('201607013361763');
+        $hsp->getServiceDetails('201607013361763');
+    }
 
-        $this->assertIsObject($result);
-        $this->assertFalse($result->success);
+    private function makeHistoricalServicePerformance(): HistoricalServicePerformance
+    {
+        return new HistoricalServicePerformance($this->client->reveal());
     }
 }

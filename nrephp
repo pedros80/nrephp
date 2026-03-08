@@ -14,12 +14,12 @@ use Symfony\Component\Console\Application;
 
 $application = new Application();
 
-$application->add(new BuildClasses());
-$application->add(new GetToken());
-$application->add(new UpdateXmlFiles());
-$application->add(new UpdateZipFiles());
-$application->add(new PushPortListen());
-$application->add(new RealTimeIncidentsListen());
-$application->add(new GetStationData());
+$application->addCommand(new BuildClasses());
+$application->addCommand(new GetToken());
+$application->addCommand(new UpdateXmlFiles());
+$application->addCommand(new UpdateZipFiles());
+$application->addCommand(new PushPortListen());
+$application->addCommand(new RealTimeIncidentsListen());
+$application->addCommand(new GetStationData());
 
 $application->run();

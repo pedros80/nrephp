@@ -13,9 +13,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 final class BuildClasses extends Command
 {
-    protected static $defaultName = 'build:classes';
+    protected static string $defaultName = 'build:classes';
 
-    protected static $defaultDescription = 'Generate and write to file any classes to be built';
+    protected static string $defaultDescription = 'Generate and write to file any classes to be built';
 
     public function __construct()
     {

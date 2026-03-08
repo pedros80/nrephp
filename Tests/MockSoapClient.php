@@ -4,28 +4,36 @@ declare(strict_types=1);
 
 namespace Tests;
 
-use ArrayIterator;
-use InfiniteIterator;
-use SoapClient;
-use SoapFault;
-use SoapHeader;
-
-use function array_key_exists;
-use function func_get_args;
-use function is_callable;
+use function array_filter;
 
 use const ARRAY_FILTER_USE_KEY;
+
+use function array_key_exists;
+use function array_keys;
+use function array_reduce;
+
+use ArrayIterator;
+
+use function func_get_args;
+
+use InfiniteIterator;
+
+use function is_callable;
+use function is_numeric;
+
+use SoapClient;
+use SoapFault;
+
+use SoapHeader;
 
 final class MockSoapClient extends SoapClient
 {
     /**
-     * @var array<int|string, InfiniteIterator>
+     * @var array<int|string, InfiniteIterator<int|string, mixed, ArrayIterator<int|string, mixed>>>
      */
     private array $iterators;
 
     /**
-     * MockSoapClient constructor.
-     *
      * @param mixed $responses
      */
     public function __construct($responses)
@@ -34,12 +42,9 @@ final class MockSoapClient extends SoapClient
     }
 
     /**
-     * @param string $function_name
      * @param array<mixed> $arguments
      *
      * @throws SoapFault
-     *
-     * @return mixed
      */
     public function __call(string $function_name, array $arguments = []): mixed
     {
@@ -53,26 +58,23 @@ final class MockSoapClient extends SoapClient
     }
 
     /**
-     * @param string $function_name
      * @param array<mixed> $arguments
      * @param array<mixed>|null $options
      * @param array<mixed>|SoapHeader|null $input_headers
      * @param array<mixed>|null $output_headers
      *
      * @throws SoapFault
-     *
-     * @return mixed
      */
     public function __soapCall(
         string $function_name,
         array $arguments,
-        array $options = null,
+        ?array $options = null,
         $input_headers = null,
         &$output_headers = null
     ): mixed {
-        $iterator = true === array_key_exists($function_name, $this->iterators) ?
-            $this->iterators[$function_name] :
-            $this->iterators['*'];
+        $iterator = array_key_exists($function_name, $this->iterators)
+            ? $this->iterators[$function_name]
+            : $this->iterators['*'];
 
         $response = $iterator->current();
         $iterator->next();
@@ -81,15 +83,17 @@ final class MockSoapClient extends SoapClient
             throw $response;
         }
 
-        return true === is_callable($response) ?
-            ($response)(...func_get_args()) :
-            $response;
+        return is_callable($response)
+            ? ($response)(...func_get_args())
+            : $response;
     }
 
     /**
      * Build a simple Infinite iterator.
      *
      * @param array<mixed> $data
+     *
+     * @return InfiniteIterator<int|string, mixed, ArrayIterator<int|string, mixed>>
      */
     private function buildIterator(array $data): InfiniteIterator
     {
@@ -104,19 +108,20 @@ final class MockSoapClient extends SoapClient
      *
      * @param array<callable|mixed> $data
      *
-     * @return array<int|string, InfiniteIterator>
+     * @return array<int|string, InfiniteIterator<int|string, mixed, ArrayIterator<int|string, mixed>>>
      */
     private function buildIterators(array $data): array
     {
         return array_reduce(
             array_keys($data),
             /**
+             * @param array<int|string, InfiniteIterator<int|string, mixed, ArrayIterator<int|string, mixed>>> $iterators
              * @param int|string $key
              *
-             * @return array<int|string, InfiniteIterator>
+             * @return array<int|string, InfiniteIterator<int|string, mixed, ArrayIterator<int|string, mixed>>>
              */
             function (array $iterators, $key) use ($data): array {
-                if (false === is_numeric($key)) {
+                if (!is_numeric($key)) {
                     $iterators[$key] = $this->buildIterator((array) $data[$key]);
                 }
 

@@ -1,9 +1,11 @@
 includes:
     - vendor/jangregor/phpstan-prophecy/extension.neon
+
 parameters:
   level: 8
   paths:
     - src
     - build
     - Tests
-  checkMissingIterableValueType: false
+  ignoreErrors:
+    - identifier: missingType.iterableValue

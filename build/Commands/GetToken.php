@@ -12,9 +12,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 final class GetToken extends Command
 {
-    protected static $defaultName = 'build:getToken';
+    protected static string $defaultName = 'build:getToken';
 
-    protected static $defaultDescription = 'Generate a new access token from user/pass credentials';
+    protected static string $defaultDescription = 'Generate a new access token from user/pass credentials';
 
     public function __construct()
     {

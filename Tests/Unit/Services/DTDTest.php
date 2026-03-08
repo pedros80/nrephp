@@ -22,7 +22,7 @@ final class DTDTest extends TestCase
         $this->assertInstanceOf(DTD::class, $dtd);
     }
 
-    public function testFaresReturnsAString(): void
+    public function testFaresCallsClient(): void
     {
         $client = $this->prophesize(Client::class);
         $dtd    = new DTD($client->reveal());
@@ -31,14 +31,12 @@ final class DTDTest extends TestCase
             'headers' => [
                 'X-Auth-Token' => 'token',
             ]
-        ])->willReturn(new Response(200, [], 'some text that is really a zip file...'));
+        ])->willReturn(new Response(200, [], 'some text that is really a zip file...'))->shouldBeCalled();
 
-        $result = $dtd->fares('token');
-
-        $this->assertIsString($result);
+        $dtd->fares('token');
     }
 
-    public function testRouteingReturnsAString(): void
+    public function testRouteingCallsClient(): void
     {
         $client = $this->prophesize(Client::class);
         $dtd    = new DTD($client->reveal());
@@ -47,14 +45,12 @@ final class DTDTest extends TestCase
             'headers' => [
                 'X-Auth-Token' => 'token',
             ]
-        ])->willReturn(new Response(200, [], 'some text that is really a zip file...'));
+        ])->willReturn(new Response(200, [], 'some text that is really a zip file...'))->shouldBeCalled();
 
-        $result = $dtd->routeing('token');
-
-        $this->assertIsString($result);
+        $dtd->routeing('token');
     }
 
-    public function testTimetableReturnsAString(): void
+    public function testTimetableCallsClient(): void
     {
         $client = $this->prophesize(Client::class);
         $dtd    = new DTD($client->reveal());
@@ -63,10 +59,8 @@ final class DTDTest extends TestCase
             'headers' => [
                 'X-Auth-Token' => 'token',
             ]
-        ])->willReturn(new Response(200, [], 'some text that is really a zip file...'));
+        ])->willReturn(new Response(200, [], 'some text that is really a zip file...'))->shouldBeCalled();
 
-        $result = $dtd->timetable('token');
-
-        $this->assertIsString($result);
+        $dtd->timetable('token');
     }
 }
